@@ -10,18 +10,11 @@ $(document).ready(function(){
 
 
 	$(".fullscreen").css("height", window_height)
-    $(".fitscreen").css("height", fitscreen);
+	$(".fitscreen").css("height", fitscreen);
 
-  //------- Active Nice Select --------//
-
-    $('select').niceSelect();
-
-
-    $('.navbar-nav li.dropdown').hover(function() {
-    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-    }, function() {
-    $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-    });
+     if(document.getElementById("default-select")){
+          $('select').niceSelect();
+    };
 
     $('.img-pop-up').magnificPopup({
         type: 'image',
@@ -30,536 +23,244 @@ $(document).ready(function(){
         }
     });
 
-    // Search Toggle
-    $("#search_input_box").hide();
-    $("#search").on("click", function () {
-        $("#search_input_box").slideToggle();
-        $("#search_input").focus();
-    });
-    $("#close_search").on("click", function () {
-        $('#search_input_box').slideUp(500);
-    });
 
-    /*==========================
-		javaScript for sticky header
-		============================*/
-			$(".sticky-header").sticky();
-
-    /*=================================
-    Javascript for banner area carousel
-    ==================================*/
-    $(".active-banner-slider").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/banner/prev.png'>","<img src='img/banner/next.png'>"],
-        dots:false
+    $('.play-btn').magnificPopup({
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+        fixedContentPos: false
     });
+ 
 
-    /*=================================
-    Javascript for product area carousel
-    ==================================*/
-    $(".active-product-area").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
-        dots:false
-    });
 
-    /*=================================
-    Javascript for single product area carousel
-    ==================================*/
-    $(".s_Product_carousel").owlCarousel({
-      items:1,
-      autoplay:false,
-      autoplayTimeout: 5000,
-      loop:true,
-      nav:false,
-      dots:true
+  // Initiate superfish on nav menu
+  $('.nav-menu').superfish({
+    animation: {
+      opacity: 'show'
+    },
+    speed: 400
+  });
+
+  // Mobile Navigation
+  if ($('#nav-menu-container').length) {
+    var $mobile_nav = $('#nav-menu-container').clone().prop({
+      id: 'mobile-nav'
     });
-    
-    /*=================================
-    Javascript for exclusive area carousel
-    ==================================*/
-    $(".active-exclusive-product-slider").owlCarousel({
-        items:1,
-        autoplay:false,
-        autoplayTimeout: 5000,
-        loop:true,
-        nav:true,
-        navText:["<img src='img/product/prev.png'>","<img src='img/product/next.png'>"],
-        dots:false
+    $mobile_nav.find('> ul').attr({
+      'class': '',
+      'id': ''
+    });
+    $('body').append($mobile_nav);
+    $('body').prepend('<button type="button" id="mobile-nav-toggle"><i class="lnr lnr-menu"></i></button>');
+    $('body').append('<div id="mobile-body-overly"></div>');
+    $('#mobile-nav').find('.menu-has-children').prepend('<i class="lnr lnr-chevron-down"></i>');
+
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('#mobile-nav-toggle').addClass('nav-scrolled');
+      } else {
+        $('#mobile-nav-toggle').removeClass('nav-scrolled');
+      }
+    })
+    $(document).on('click', '.menu-has-children i', function(e) {
+      $(this).next().toggleClass('menu-item-active');
+      $(this).nextAll('ul').eq(0).slideToggle();
+      $(this).toggleClass("lnr-chevron-up lnr-chevron-down");
     });
 
-    //--------- Accordion Icon Change ---------//
-
-    $('.collapse').on('shown.bs.collapse', function(){
-        $(this).parent().find(".lnr-arrow-right").removeClass("lnr-arrow-right").addClass("lnr-arrow-left");
-    }).on('hidden.bs.collapse', function(){
-        $(this).parent().find(".lnr-arrow-left").removeClass("lnr-arrow-left").addClass("lnr-arrow-right");
+    $(document).on('click', '#mobile-nav-toggle', function(e) {
+      $('body').toggleClass('mobile-nav-active');
+      $('#mobile-nav-toggle i').toggleClass('lnr-cross lnr-menu');
+      $('#mobile-body-overly').toggle();
     });
 
-  // Select all links with hashes
-  $('.main-menubar a[href*="#"]')
-    // Remove links that don't actually link to anything
-    .not('[href="#"]')
-    .not('[href="#0"]')
-    .click(function(event) {
-      // On-page links
-      if (
-        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-        && 
-        location.hostname == this.hostname
-      ) {
-        // Figure out element to scroll to
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-        // Does a scroll target exist?
-        if (target.length) {
-          // Only prevent default if animation is actually gonna happen
-          event.preventDefault();
-          $('html, body').animate({
-            scrollTop: target.offset().top-70
-          }, 1000, function() {
-            // Callback after animation
-            // Must change focus!
-            var $target = $(target);
-            $target.focus();
-            if ($target.is(":focus")) { // Checking if the target was focused
-              return false;
-            } else {
-              $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-              $target.focus(); // Set focus again
-            };
-          });
+    $(document).click(function(e) {
+      var container = $("#mobile-nav, #mobile-nav-toggle");
+      if (!container.is(e.target) && container.has(e.target).length === 0) {
+        if ($('body').hasClass('mobile-nav-active')) {
+          $('body').removeClass('mobile-nav-active');
+          $('#mobile-nav-toggle i').toggleClass('lnr-cross lnr-menu');
+          $('#mobile-body-overly').fadeOut();
         }
       }
     });
+  } else if ($("#mobile-nav, #mobile-nav-toggle").length) {
+    $("#mobile-nav, #mobile-nav-toggle").hide();
+  }
 
+  // Smooth scroll for the menu and links with .scrollto classes
+  /*$('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      if (target.length) {
+        var top_space = 0;
 
+        if ($('#header').length) {
+          top_space = $('#header').outerHeight();
 
-      // -------   Mail Send ajax
+          if( ! $('#header').hasClass('header-fixed') ) {
+            top_space = top_space;
+          }
+        }
 
-         $(document).ready(function() {
-            var form = $('#booking'); // contact form
-            var submit = $('.submit-btn'); // submit button
-            var alert = $('.alert-msg'); // alert div for show alert message
+        $('html, body').animate({
+          scrollTop: target.offset().top - top_space
+        }, 1500, 'easeInOutExpo');
 
-            // form submit event
-            form.on('submit', function(e) {
-                e.preventDefault(); // prevent default form submit
+        if ($(this).parents('.nav-menu').length) {
+          $('.nav-menu .menu-active').removeClass('menu-active');
+          $(this).closest('li').addClass('menu-active');
+        }
 
-                $.ajax({
-                    url: 'booking.php', // form action url
-                    type: 'POST', // form submit method get/post
-                    dataType: 'html', // request type html/json/xml
-                    data: form.serialize(), // serialize form data
-                    beforeSend: function() {
-                        alert.fadeOut();
-                        submit.html('Sending....'); // change submit button text
-                    },
-                    success: function(data) {
-                        alert.html(data).fadeIn(); // fade in response data
-                        form.trigger('reset'); // reset form
-                        submit.attr("style", "display: none !important");; // reset submit button text
-                    },
-                    error: function(e) {
-                        console.log(e)
-                    }
-                });
-            });
-        });
-
-
+        if ($('body').hasClass('mobile-nav-active')) {
+          $('body').removeClass('mobile-nav-active');
+          $('#mobile-nav-toggle i').toggleClass('lnr-times lnr-bars');
+          $('#mobile-body-overly').fadeOut();
+        }
+        return false;
+      }
+    }
+  });*/
 
 
     $(document).ready(function() {
-        $('#mc_embed_signup').find('form').ajaxChimp();
-    });   
 
+    $('html, body').hide();
 
+        if (window.location.hash) {
 
-     if(document.getElementById("js-countdown")){
+        setTimeout(function() {
 
-        var countdown = new Date("October 17, 2018");
+        $('html, body').scrollTop(0).show();
 
-        function getRemainingTime(endtime) {
-            var milliseconds = Date.parse(endtime) - Date.parse(new Date());
-            var seconds = Math.floor(milliseconds / 1000 % 60);
-            var minutes = Math.floor(milliseconds / 1000 / 60 % 60);
-            var hours = Math.floor(milliseconds / (1000 * 60 * 60) % 24);
-            var days = Math.floor(milliseconds / (1000 * 60 * 60 * 24));
+        $('html, body').animate({
 
-        return {
-            'total': milliseconds,
-            'seconds': seconds,
-            'minutes': minutes,
-            'hours': hours,
-            'days': days
-            };
+        scrollTop: $(window.location.hash).offset().top
+
+        }, 1000)
+
+        }, 0);
+
         }
 
-        function initClock(id, endtime) {
-            var counter = document.getElementById(id);
-            var daysItem = counter.querySelector('.js-countdown-days');
-            var hoursItem = counter.querySelector('.js-countdown-hours');
-            var minutesItem = counter.querySelector('.js-countdown-minutes');
-            var secondsItem = counter.querySelector('.js-countdown-seconds');
+        else {
 
-        function updateClock() {
-            var time = getRemainingTime(endtime);
-
-            daysItem.innerHTML = time.days;
-            hoursItem.innerHTML = ('0' + time.hours).slice(-2);
-            minutesItem.innerHTML = ('0' + time.minutes).slice(-2);
-            secondsItem.innerHTML = ('0' + time.seconds).slice(-2);
-
-            if (time.total <= 0) {
-              clearInterval(timeinterval);
-            }
-            }
-
-            updateClock();
-            var timeinterval = setInterval(updateClock, 1000);
-        }
-
-        initClock('js-countdown', countdown);
-
-  };
-
-
-
-      $('.quick-view-carousel-details').owlCarousel({
-          loop: true,
-          dots: true,
-          items: 1,
-      })
-
-
-
-    //----- Active No ui slider --------//
-
-
-
-    $(function(){
-
-        if(document.getElementById("price-range")){
-        
-        var nonLinearSlider = document.getElementById('price-range');
-        
-        noUiSlider.create(nonLinearSlider, {
-            connect: true,
-            behaviour: 'tap',
-            start: [ 500, 4000 ],
-            range: {
-                // Starting at 500, step the value by 500,
-                // until 4000 is reached. From there, step by 1000.
-                'min': [ 0 ],
-                '10%': [ 500, 500 ],
-                '50%': [ 4000, 1000 ],
-                'max': [ 10000 ]
-            }
-        });
-
-
-        var nodes = [
-            document.getElementById('lower-value'), // 0
-            document.getElementById('upper-value')  // 1
-        ];
-
-        // Display the slider value and how far the handle moved
-        // from the left edge of the slider.
-        nonLinearSlider.noUiSlider.on('update', function ( values, handle, unencoded, isTap, positions ) {
-            nodes[handle].innerHTML = values[handle];
-        });
+        $('html, body').show();
 
         }
 
     });
-
-    
-    //-------- Have Cupon Button Text Toggle Change -------//
-
-    $('.have-btn').on('click', function(e){
-        e.preventDefault();
-        $('.have-btn span').text(function(i, text){
-          return text === "Have a Coupon?" ? "Close Coupon" : "Have a Coupon?";
-        })
-        $('.cupon-code').fadeToggle("slow");
-    });
-
-    $('.load-more-btn').on('click', function(e){
-        e.preventDefault();
-        $('.load-product').fadeIn('slow');
-        $(this).fadeOut();
-    });
-    
-
-
-
-
-  //------- Start Quantity Increase & Decrease Value --------//
-
-
-
-
-    var value,
-        quantity = document.getElementsByClassName('quantity-container');
-
-    function createBindings(quantityContainer) {
-        var quantityAmount = quantityContainer.getElementsByClassName('quantity-amount')[0];
-        var increase = quantityContainer.getElementsByClassName('increase')[0];
-        var decrease = quantityContainer.getElementsByClassName('decrease')[0];
-        increase.addEventListener('click', function () { increaseValue(quantityAmount); });
-        decrease.addEventListener('click', function () { decreaseValue(quantityAmount); });
-    }
-
-    function init() {
-        for (var i = 0; i < quantity.length; i++ ) {
-            createBindings(quantity[i]);
-        }
-    };
-
-    function increaseValue(quantityAmount) {
-        value = parseInt(quantityAmount.value, 10);
-
-        console.log(quantityAmount, quantityAmount.value);
-
-        value = isNaN(value) ? 0 : value;
-        value++;
-        quantityAmount.value = value;
-    }
-
-    function decreaseValue(quantityAmount) {
-        value = parseInt(quantityAmount.value, 10);
-
-        value = isNaN(value) ? 0 : value;
-        if (value > 0) value--;
-
-        quantityAmount.value = value;
-    }
-
-  init();
-
-//------- End Quantity Increase & Decrease Value --------//
-
-  /*----------------------------------------------------*/
-  /*  Google map js
-    /*----------------------------------------------------*/
-
-    if ($("#mapBox").length) {
-        var $lat = $("#mapBox").data("lat");
-        var $lon = $("#mapBox").data("lon");
-        var $zoom = $("#mapBox").data("zoom");
-        var $marker = $("#mapBox").data("marker");
-        var $info = $("#mapBox").data("info");
-        var $markerLat = $("#mapBox").data("mlat");
-        var $markerLon = $("#mapBox").data("mlon");
-        var map = new GMaps({
-          el: "#mapBox",
-          lat: $lat,
-          lng: $lon,
-          scrollwheel: false,
-          scaleControl: true,
-          streetViewControl: false,
-          panControl: true,
-          disableDoubleClickZoom: true,
-          mapTypeControl: false,
-          zoom: $zoom,
-          styles: [
-            {
-              featureType: "water",
-              elementType: "geometry.fill",
-              stylers: [
-                {
-                  color: "#dcdfe6"
-                }
-              ]
-            },
-            {
-              featureType: "transit",
-              stylers: [
-                {
-                  color: "#808080"
-                },
-                {
-                  visibility: "off"
-                }
-              ]
-            },
-            {
-              featureType: "road.highway",
-              elementType: "geometry.stroke",
-              stylers: [
-                {
-                  visibility: "on"
-                },
-                {
-                  color: "#dcdfe6"
-                }
-              ]
-            },
-            {
-              featureType: "road.highway",
-              elementType: "geometry.fill",
-              stylers: [
-                {
-                  color: "#ffffff"
-                }
-              ]
-            },
-            {
-              featureType: "road.local",
-              elementType: "geometry.fill",
-              stylers: [
-                {
-                  visibility: "on"
-                },
-                {
-                  color: "#ffffff"
-                },
-                {
-                  weight: 1.8
-                }
-              ]
-            },
-            {
-              featureType: "road.local",
-              elementType: "geometry.stroke",
-              stylers: [
-                {
-                  color: "#d7d7d7"
-                }
-              ]
-            },
-            {
-              featureType: "poi",
-              elementType: "geometry.fill",
-              stylers: [
-                {
-                  visibility: "on"
-                },
-                {
-                  color: "#ebebeb"
-                }
-              ]
-            },
-            {
-              featureType: "administrative",
-              elementType: "geometry",
-              stylers: [
-                {
-                  color: "#a7a7a7"
-                }
-              ]
-            },
-            {
-              featureType: "road.arterial",
-              elementType: "geometry.fill",
-              stylers: [
-                {
-                  color: "#ffffff"
-                }
-              ]
-            },
-            {
-              featureType: "road.arterial",
-              elementType: "geometry.fill",
-              stylers: [
-                {
-                  color: "#ffffff"
-                }
-              ]
-            },
-            {
-              featureType: "landscape",
-              elementType: "geometry.fill",
-              stylers: [
-                {
-                  visibility: "on"
-                },
-                {
-                  color: "#efefef"
-                }
-              ]
-            },
-            {
-              featureType: "road",
-              elementType: "labels.text.fill",
-              stylers: [
-                {
-                  color: "#696969"
-                }
-              ]
-            },
-            {
-              featureType: "administrative",
-              elementType: "labels.text.fill",
-              stylers: [
-                {
-                  visibility: "on"
-                },
-                {
-                  color: "#737373"
-                }
-              ]
-            },
-            {
-              featureType: "poi",
-              elementType: "labels.icon",
-              stylers: [
-                {
-                  visibility: "off"
-                }
-              ]
-            },
-            {
-              featureType: "poi",
-              elementType: "labels",
-              stylers: [
-                {
-                  visibility: "off"
-                }
-              ]
-            },
-            {
-              featureType: "road.arterial",
-              elementType: "geometry.stroke",
-              stylers: [
-                {
-                  color: "#d6d6d6"
-                }
-              ]
-            },
-            {
-              featureType: "road",
-              elementType: "labels.icon",
-              stylers: [
-                {
-                  visibility: "off"
-                }
-              ]
-            },
-            {},
-            {
-              featureType: "poi",
-              elementType: "geometry.fill",
-              stylers: [
-                {
-                  color: "#dadada"
-                }
-              ]
-            }
-          ]
-        });
-      }
-
-
   
+
+  // Header scroll class
+  $(window).scroll(function() {
+    if ($(this).scrollTop() > 100) {
+      $('#header').addClass('header-scrolled');
+      $('#nav-menu-container').addClass('nav-menu-scrolled');
+    } else {
+      $('#header').removeClass('header-scrolled');
+      $('#nav-menu-container').removeClass('nav-menu-scrolled');
+    }
+  })
+
+
+    $('.active-course-carusel').owlCarousel({
+        items:3,
+        loop:true,
+        margin:30,
+        dots: true,
+        nav:true,
+        navText: ["<span class='lnr lnr-arrow-up'></span>",
+        "<span class='lnr lnr-arrow-down'></span>"],        
+            responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            900: {
+                items: 3,
+            }
+
+        }
+    });
+
+        $('.active-tstimonial-carusel').owlCarousel({
+        items:3,
+        margin:30,
+        autoplay:true,
+        loop:true,
+        dots: true,       
+            responsive: {
+            0: {
+                items: 1
+            },
+            480: {
+                items: 1,
+            },
+            768: {
+                items: 2,
+            },
+            900: {
+                items: 3,
+            }
+
+        }
+    });
+
+
+
+
+    //  Start Google map 
+
+            // When the window has finished loading create our google map below
+
+            if(document.getElementById("map")){
+            
+            google.maps.event.addDomListener(window, 'load', init);
+        
+            function init() {
+                // Basic options for a simple Google Map
+                // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 11,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{"featureType":"water","elementType":"geometry","stylers":[{"color":"#e9e9e9"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#ffffff"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f5f5f5"},{"lightness":21}]},{"featureType":"poi.park","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(40.6700, -73.9400),
+                    map: map,
+                    title: 'Snazzy!'
+                });
+            }
+    }
+
+
+        $(document).ready(function() {
+            $('#mc_embed_signup').find('form').ajaxChimp();
+        });      
+
+
+
 
  });
