@@ -1,3 +1,15 @@
+/*
+1. #fdb700
+2. #fe7f07
+3. #fe3308
+4. #d7003f
+5. #930046
+6. #4a0048
+
+
+*/
+
+
 
 /* Header */
 
@@ -54,29 +66,36 @@ max-width: 1200px !important;
 .banner-left{
   float: left;
   text-align: left;
-  padding-left: 10%;
+  padding-right: 15%;
+  max-width: 60%;
 }
 
 .banner-right{
-  width: 50%;
-  height: inherit;
+  height: 600px;
+  flex: auto;
+  float: right;
+  max-width: 40%;
+  width: 400px;
+  margin-right: -100px;
   padding-right: 0px;
+
+}
+.banner-right h1{
+  font-size: 60px !important;
 }
 
+
 #slideset {
-  height: inherit; 
-  padding-top: 10.3%;
-  margin-left: -5px;
+  height: 100%;
+  width:100%;
   position: relative;
   overflow: hidden;
-  
 }
 
 #slideset img{
-  max-width:695px;
-  object-fit: fill;
-  object-position: center;
-  
+  height:600px;
+  width:inherit;
+  object-fit: contain;
 }
   
 @media (max-width: 991px) {
@@ -94,12 +113,15 @@ max-width: 1200px !important;
     margin-top: 150px;
     text-align: center;
     padding:0;
+    max-width: 100%;
   }
 
   .banner-right{
     height: 83%;
     width:90%;
+    max-width: 100%;
     padding-right: 15px;
+    margin-right: 0px;
   }
   
   #slideset {
@@ -201,3 +223,27 @@ max-width: 1200px !important;
   color: rgba(245, 245, 245, 0.90) !important;
 }
 
+/* Shop */
+
+#unique .title h1{
+  color:rgb(20, 20, 20) !important;
+  font-size: 48px;
+}
+
+#unique .title p{
+  color:rgb(44, 44, 44) !important;
+  font-size: 16px;
+}
+
+#unique .rsign{
+ font-family:monospace
+}
+
+
+/* Footer */
+.footer-area p{
+  color: rgba(245, 245, 245, 0.7);
+}
+.footer-social i{
+  font-size: 25px;
+}
