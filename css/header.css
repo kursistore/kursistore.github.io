@@ -1,0 +1,296 @@
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.logo{
+  height: 45px;
+}
+
+.logo img{
+  height: 55px;
+  margin-top: -5px !important;
+  background: none;
+}
+
+#p-header .container{
+max-width: 1200px !important;
+}
+
+#p-header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 997;
+  background: white;
+  width: inherit;
+  padding: 4px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (max-width: 673px) {
+  #logo {
+    margin-left: 20px;
+  }
+ 
+}
+
+#p-header #logo h1 {
+  font-size: 34px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+#p-header #logo h1 a, #header #logo h1 a:hover {
+  color: #fff;
+  padding-left: 10px;
+  border-left: 4px solid #fe3308;
+}
+
+#p-header #logo img {
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  #p-header #logo h1 {
+    font-size: 28px;
+  }
+ 
+}
+
+@media (min-width: 1024px) {
+  #p-header #logo img {
+    max-height: 60px;
+  }
+}
+
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Nav Menu Essentials */
+.p-nav-menu, .p-nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.p-nav-menu ul {
+  position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
+  z-index: 99;
+}
+
+.p-nav-menu li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.p-nav-menu > li {
+  float: left;
+}
+
+.p-nav-menu li:hover > ul,
+.p-nav-menu li.sfHover > ul {
+  display: block;
+}
+
+.p-nav-menu ul ul {
+  top: 0;
+  left: 100%;
+}
+
+.p-nav-menu ul li {
+  min-width: 180px;
+  text-align: left;
+}
+
+/* Nav Menu Arrows */
+.sf-arrows .sf-with-ul {
+  padding-right: 30px;
+}
+
+.sf-arrows .sf-with-ul:after {
+  content: "\f107";
+  position: absolute;
+  right: 15px;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+  content: "\f105";
+}
+
+/* Nav Meu Container */
+#p-nav-menu-container {
+  margin: 0px;
+}
+
+
+
+@media (min-width: 800px) {
+  #p-nav-menu-container {
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #p-nav-menu-container {
+    display: none;
+  }
+}
+
+/* Nav Menu Styling */
+
+.p-nav-menu a {
+  padding: 0 15px 0px 0px;
+  font-size: 15px; 
+  color:#4a0048ff;
+  font-weight: 450;
+}
+.p-nav-menu a:hover {
+  color:#fe3308ff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.p-nav-menu > li {
+  margin-left: 10px;
+}
+
+.p-nav-menu ul {
+  margin: 16px 0 0 0;
+  padding: 10px;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  background: #fff;
+}
+
+.p-nav-menu ul li {
+  transition: 0.3s;
+}
+
+.p-nav-menu ul li a {
+  padding: 10px;
+  color: #333;
+  transition: 0.3s;
+  display: block;
+  font-size: 12px;
+  text-transform: none;
+}
+
+.p-nav-menu ul li:hover > a {
+  color: #fe3308;
+}
+
+.p-nav-menu ul ul {
+  margin: 0;
+}
+
+/* Mobile Nav Toggle */
+#mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  z-index: 999;
+  top: 12px;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  display: none;
+  transition: all 0.4s;
+  outline: none;
+  cursor: pointer;  
+  margin-top: 0px;
+}
+
+
+#mobile-nav-toggle i {
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  transition: all 0.5s;
+}
+
+@media (max-width: 800px) {
+  #mobile-nav-toggle {
+    display: inline;
+  }
+  #p-nav-menu-container {
+    display: none;
+  }
+}
+
+/* Mobile Nav Styling */
+#mobile-nav {
+  position: fixed;
+  top: 0;
+  padding-top: 18px;
+  bottom: 0;
+  z-index: 998;
+  background: rgba(0, 0, 0, 0.8);
+  left: -260px;
+  width: 260px;
+  overflow-y: auto;
+  transition: 0.4s;
+}
+
+#mobile-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#mobile-nav ul li {
+  position: relative;
+}
+
+#mobile-nav ul li a {
+  color: #fff;
+  font-size: 13px;
+  text-transform: uppercase;
+  overflow: hidden;
+  padding: 10px 22px 10px 15px;
+  position: relative;
+  text-decoration: none;
+  width: 100%;
+  display: block;
+  outline: none;
+  font-weight: 700;
+}
+
+#mobile-nav ul li a:hover {
+  color: #fff;
+}
+
+#mobile-nav ul li li {
+  padding-left: 30px;
+}
+
+#mobile-nav ul .menu-has-children i {
+  position: absolute;
+  right: 0;
+  z-index: 99;
+  padding: 15px;
+  cursor: pointer;
+  color: #fff;
+}
+
+#mobile-nav ul .menu-has-children i.fa-chevron-up {
+  color: #fe3308;
+}
+
+#mobile-nav ul .menu-has-children li a {
+  text-transform: none;
+}
+
+#mobile-nav ul .menu-item-active {
+  color: #fe3308;
+}

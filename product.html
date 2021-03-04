@@ -30,9 +30,11 @@
 	<link rel="stylesheet" href="css/owl.carousel.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/product.css">
+	<link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
+
 	<!-- Start header Area -->
 	<header id="p-header" class="header-scrolled">
 		<div class="container">
@@ -64,9 +66,13 @@
 	<!-- Start Product Area -->
 	<section class="product-area">
 		<div class="content-container">
+			
 			<div class="row justify-content-center align-items-center">
 				<div class="product-left">
 					<div class="main-images">
+						<video class="main-image" autoplay loop muted poster="img/products/MSTBM01VRT03/00.png">
+							<source type="video/mp4" src="img/products/MSTBM01VRT03/fold.mp4">
+						</video>
 						<img class="main-image" src="img/products/MSTBM01VRT03/00.png" alt="">
 						<img class="main-image" src="img/products/MSTBM01VRT03/20.png" alt="">
 						<img class="main-image" src="img/products/MSTBM01VRT03/40.png" alt="">
@@ -74,9 +80,7 @@
 						<img class="main-image" src="img/products/MSTBM01VRT03/90.png" alt="">
 						<!-- <embed class="main-image" type="text/html" src="img/products/MSTBM01VRT03/360.html"
 							style="width:600px;height:900px"> -->
-							<video class="main-image" autoplay loop muted poster="img/products/MSTBM01VRT03/00.png">
-								<source type="video/mp4" src="img/products/MSTBM01VRT03/fold.mp4">
-								</video>
+						
 						<img class="main-image" src="img/q1.jpeg" alt="">
 						<img class="main-image" src="img/q2.jpeg" alt="">
 					</div>
@@ -96,7 +100,7 @@
 					<h1>Workstation</h1>
 					<h4>Folding Study Table</h4>
 					<div class="price-tag">
-						<h3>
+						<h3 id="price">
 							<font face="Courier" ,size="5">₹</font> 14,999
 						</h3>
 					</div>
@@ -121,15 +125,19 @@
 					</div>
 					<div class="product-description">
 						<p>
-							<span>We are here to listen from you deliver exellence</span>
+							<span>All new modern Design for Study or Home Office.</span>
 						</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-							dolore magna aliqua.
-							Ut enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+							Kursi Store Products are carefully Designed 
 						</p>
 					</div>
-					<a class="text-uppercase primary-btn" href="#">Buy Now</a>
+					<a class="text-uppercase primary-btn"
+						onclick="order()"
+						href="#"
+						>
+						Buy Now
+					</a>
+					
 					<div class="detail-section">
 						<div class="detail-section-title">
 							<h3>Specifications</h3>
@@ -139,34 +147,80 @@
 							<h4>General</h4>
 							<table>
 								<colgroup>
-									<col span="1" style="width: 15%;">
-									<col span="1" style="width: 85%;">
+									<col span="1" style="width: 25%;">
+									<col span="1" style="width: 75%;">
 								</colgroup>
 								<tr>
-									<th>Height</td>
-									<td>158 cm</td>
+									<th>Brand</td>
+									<td>Kursi Store</td>
 								</tr>
 								<tr>
-									<th>Weight</td>
-									<td>20kg</td>
+									<th>Model</td>
+									<td id="model">MSTBM01VRT03</td>
+								</tr>
+								<tr>
+									<th>Delivery Condition</td>
+									<td>Knock Down</td>
+								</tr>
+								<tr>
+									<th>Finish Type</td>
+									<td>Matte</td>
+								</tr>
+								<tr>
+									<th>Suitable For</td>
+									<td>Study & Home Office</td>
+								</tr>
+								<tr>
+									<th>Country of Origin</td>
+									<td>India</td>
 								</tr>
 							</table>
 						</div>
 						<div class="detail-table">
 							<hr>
-							<h4>Warrenty</h4>
+							<h4>Dimentions</h4>
 							<table>
 								<colgroup>
-									<col span="1" style="width: 15%;">
-									<col span="1" style="width: 85%;">
+									<col span="1" style="width: 25%;">
+									<col span="1" style="width: 75%;">
 								</colgroup>
 								<tr>
+									<th>Length</td>
+									<td>--------------</td>
+								</tr>
+								<tr>
+									<th>Breadth</td>
+									<td>--------------</td>
+								</tr>
+								<tr>
 									<th>Height</td>
-									<td>158 cm</td>
+									<td>--------------</td>
 								</tr>
 								<tr>
 									<th>Weight</td>
-									<td>20kg</td>
+									<td>--------------</td>
+								</tr>
+							</table>
+						</div>
+						<div class="detail-table">
+							<hr>
+							<h4>Material & Color</h4>
+							<table>
+								<colgroup>
+									<col span="1" style="width: 25%;">
+									<col span="1" style="width: 75%;">
+								</colgroup>
+								<tr>
+									<th>Primary Material</td>
+									<td>Engineered Wood</td>
+								</tr>
+								<tr>
+									<th>Primary Color</td>
+									<td>White</td>
+								</tr>
+								<tr>
+									<th>Finish Color</td>
+									<td>Frosty White</td>
 								</tr>
 							</table>
 						</div>
@@ -175,18 +229,47 @@
 							<h4>Installation</h4>
 							<table>
 								<colgroup>
-									<col span="1" style="width: 15%;">
-									<col span="1" style="width: 85%;">
+									<col span="1" style="width: 25%;">
+									<col span="1" style="width: 75%;">
 								</colgroup>
 								<tr>
-									<th>Height</td>
-									<td>158 cm</td>
-								</tr>
-								<tr>
-									<th>Weight</td>
-									<td>20kg</td>
+									<th>Installation Details</td>
+									<td>The installation for this product is free of cost as part of this 
+										purchase (valid only for Knock Down products). Our Service Partner 
+										will install the product on delivery day.</td>
 								</tr>
 							</table>
+						</div>
+						<div class="detail-table">
+							<hr>
+							<h4>Warranty</h4>
+							<table>
+								<colgroup>
+									<col span="1" style="width: 25%;">
+									<col span="1" style="width: 75%;">
+								</colgroup>
+								<tr>
+									<th>Summary</td>
+									<td>1 month replacement warrenty, for manufacturing defects.
+									</td>
+								</tr>
+								<tr>
+									<th>Not Covered in Warranty</td>
+									<td>Normal Wear and Tear, Improper Handling, Inappropriate Exposure.</td>
+								</tr>
+							</table>
+						</div>
+						<div class="detail-table">
+							<hr>
+							<h4>Disclaimer</h4>
+							<p>
+								- The color of the product may vary slightly compared to the picture displayed on your screen. This is due to lighting, pixel quality and color settings
+								<br>
+								- Please check the product's dimensions to ensure the product will fit in the desired location. Also, check if the product will fit through the entrance(s) and door(s) of the premises
+								<br>
+								- Please expect an unevenness of up to 5 mm in the product due to differences in surfaces and floor levels
+								<br>
+								- Person delivering the product, will not take up any type of civil work, such as drilling holes in the wall to mount the product. The product will only be assembled.
 						</div>
 					</div>
 				</div>
@@ -196,6 +279,7 @@
 	<!-- End Product Area -->
 
 
+	<!-- start Feature Area -->
 	<section class="features-section">
 		<div class="container boundbox">
 			<div class="row inrow">
@@ -210,27 +294,27 @@
 					<div class="f-icon">
 						<img src="img/features/f-icon2.png" alt="">
 					</div>
-					<h6>Return Policy</h6>
-						<p>Free Shipping on all order</p>
+					<h6>Warranty</h6>
+						<p>Warrenty on all products</p>
 				</div>
 				<div class="feature">
 					<div class="f-icon">
 						<img src="img/features/f-icon3.png" alt="">
 					</div>
-					<h6>24/7 Support</h6>
-						<p>Free Shipping on all order</p>
+					<h6>Support</h6>
+						<p>Happy to help anytime</p>
 				</div>
 				<div class="feature">
 					<div class="f-icon">
 						<img src="img/features/f-icon4.png" alt="">
 					</div>
 					<h6>Secure Payment</h6>
-						<p>Free Shipping on all order</p>
+						<p>Secured by UPI</p>
 				</div>
 			</div>
 		</div>
 	</section>
-
+	<!-- start Feature Area -->
 
 
 	<!-- start footer Area -->
@@ -294,6 +378,7 @@
 	<script src="js/superfish.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/product.js"></script>
+	<script src="js/order.js"></script>
 </body>
 
 </html>

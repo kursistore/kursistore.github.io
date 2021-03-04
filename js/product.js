@@ -111,15 +111,27 @@ function handleForm(event) {
 } 
 form.addEventListener('submit', handleForm);
 
+function isNumeric(value) {
+  return /^-?\d+$/.test(value);
+}
 
 function checkPincode(){
 
   var pins = ['251001']
   var pincode = document.getElementById("pincodeForm").elements[0].value;
-  if(pins.includes(pincode)){
-    document.getElementById("pincodeResult").innerHTML = "<font color=darkgreen>Available</font>";
+  if(isNumeric(pincode)){
+    if(pincode.length<6){
+      document.getElementById("pincodeResult").innerHTML = "<font color=#d7003f>Invalid Pincode</font>";
+    }
+    else if(pins.includes(pincode)){
+      document.getElementById("pincodeResult").innerHTML = "<font color=darkgreen>Available</font>";
+    }
+    else{
+      document.getElementById("pincodeResult").innerHTML = "<font color=#d7003f>Currently Not Available at "+pincode+"</font>";
+    }
   }
   else{
-    document.getElementById("pincodeResult").innerHTML = "<font color=#d7003f>Currently Not Available at "+pincode+"</font>";
+    document.getElementById("pincodeResult").innerHTML = "<font color=#d7003f>Invalid Pincode</font>";
   }
+
 }
