@@ -24,6 +24,6 @@ function order(){
           +"\n Order Total: "+document.getElementById("price").innerText ;
   var url = href='https://api.whatsapp.com/send?phone=+918755837310&text='+encodeURI(uri);
   
-  //window.open(url, '_blank');
+  window.open(url, '_blank');
   console.log(uri);
 }
