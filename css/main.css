@@ -2540,6 +2540,17 @@ body.mobile-nav-active #mobile-nav-toggle {
   transition: all 0.3s ease 0s;
 }
 
+@media (max-width: 800px) {
+  .single-service{
+    box-shadow: 0px 20px 30px 0px rgba(35, 94, 231, 0.2);
+  }
+
+  .single-service h4{
+    color: #fe3308;
+  }
+ 
+}
+
 .single-service:hover {
   box-shadow: 0px 20px 30px 0px rgba(35, 94, 231, 0.2);
   cursor: pointer;
@@ -2573,7 +2584,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .unique-feature-area {
   background-color: #f7fbff;
-  background-image: linear-gradient(45deg, #e7d2fa 0%, #d7edff 100%);
+  /* background-image: linear-gradient(45deg, #e7d2fa 0%, #d7edff 100%); */
+  background-image: linear-gradient(45deg, #d7003f 0%,#4a0048 100%);
 
 }
 
@@ -2589,6 +2601,14 @@ body.mobile-nav-active #mobile-nav-toggle {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   transition: transform .2s;
+}
+
+@media (max-width: 800px) {
+  .single-unique-product{
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 95%;
+  }
 }
 .single-unique-product:hover {
   
@@ -2640,6 +2660,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
+}
+
+@media (max-width: 800px) {
+  .single-review{
+    box-shadow: 0px 20px 30px 0px rgba(35, 94, 231, 0.2);
+  }
 }
 
 .single-review p {

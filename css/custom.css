@@ -9,7 +9,19 @@
 
 */
 
+@media (max-width: 800px) {
+  .container{
+    max-width: 95%;
+  }
 
+  .home-about-right{
+    max-width: 95%;
+  }
+
+  .section-gap{
+    padding-bottom: 40px;
+  }
+}
 
 /* Header */
 
@@ -101,7 +113,7 @@ max-width: 1200px !important;
 @media (max-width: 991px) {
 
   .banner-area{
-    height:900px;
+    height:800px;
     background:url(../img/banner-bgm.png);
     background-size: cover;
   }
@@ -113,7 +125,7 @@ max-width: 1200px !important;
     margin-top: 150px;
     text-align: center;
     padding:0;
-    max-width: 100%;
+    max-width: 90%;
   }
 
   .banner-right{
@@ -125,13 +137,13 @@ max-width: 1200px !important;
   }
   
   #slideset {
-    max-width: 100%;
-    margin-left: 0px;
+    max-width:95%;
+    margin-left: 20px;
   }
   
   #slideset img{
     object-fit: contain;
-    height:38em
+    height:30em
   }
 }
 
@@ -225,18 +237,27 @@ max-width: 1200px !important;
 
 /* Shop */
 
-#unique .title h1{
+/* #unique .title h1{
   color:rgb(20, 20, 20) !important;
   font-size: 48px;
-}
+} */
 
 #unique .title p{
-  color:rgb(44, 44, 44) !important;
+  color:rgb(200, 200, 200) !important;
   font-size: 16px;
 }
 
 #unique .rsign{
  font-family:monospace
+}
+
+
+/* Reviews */
+
+@media (max-width: 800px) {
+  .review-area{
+    padding-bottom: 0;
+  }
 }
 
 
