@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Mobile Specific Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicon-->
+  <link rel="shortcut icon" href="img/fav.png">
+  <!-- Author Meta -->
+  <meta name="author" content="codepixer">
+  <!-- Meta Description -->
+  <meta name="description" content="">
+  <!-- Meta Keyword -->
+  <meta name="keywords" content="">
+  <!-- meta character set -->
+  <meta charset="UTF-8">
+  <!-- Site Title -->
+  <title>Kursi Store</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+  <!--
+      CSS
+      ============================================= -->
+  <link rel="stylesheet" href="css/linearicons.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/nice-select.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/product.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+
+  <!-- Start header Area -->
+  <header id="p-header" class="header-scrolled">
+    <div class="container">
+      <div class="row align-items-center justify-content-between d-flex">
+        <div id="logo" class="logo">
+          <a href="index.html"><img src="img/logo.png" alt="" title="" /></a>
+        </div>
+        <nav id="p-nav-menu-container">
+          <ul class="p-nav-menu">
+            <li class="p-menu-active"><a href="index.html#home">Home</a></li>
+            <li><a href="index.html/#about">About Us</a></li>
+            <li><a href="index.html#unique">Products</a></li>
+            <li><a href="index.html#review">Reviews</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+            <!--<li class="menu-has-children"><a href="">Pages</a>
+                    <ul>
+                      <li><a href="generic.html">Generic</a></li>
+                      <li><a href="elements.html">Elements</a></li>
+                    </ul>
+                  </li>-->
+          </ul>
+        </nav><!-- #nav-menu-container -->
+      </div>
+    </div>
+  </header>
+  <!-- End header Area -->
+
+
+
+  <!-- Start Order Area -->
+  <section class="order-area section-gap" id="order-detail">
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="menu-content pb-60 col-lg-10">
+          <div class="title text-center">
+            <h1 class="mb-10">Order Details</h1>
+            <p>Please provide details to proceed with your order.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center order-section">
+
+        <div class="order-left">
+          <div class="orderdetail-cards">
+            <div id="accordion">
+
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                      aria-controls="collapseOne">
+                      Shipping
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class=" card-body ordercard-container">
+                    <div class="subsection">
+                      <h4>Your Details</h4>
+                      <hr>
+                      <div class="left-sec">
+                        <div class="input-container">
+                          <input name="fname" type="text" placeholder="First Name *" />
+                        </div>
+                        <div class="input-container">
+                          <input name="lname" type="text" placeholder="Last Name *" />
+                        </div>
+                      </div>
+                      <div class="right-sec">
+                        <div class="input-container">
+                          <input name="email" type="email" placeholder="Email *" />
+                        </div>
+                        <div class="input-container">
+                          <input name="mnum" type="text" maxlength="10" placeholder="Mobile Number *" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="subsection">
+                      <h4>Address</h4>
+                      <hr>
+                      <div class="left-sec">
+                        <div class="input-container">
+                          <input name="adLine1" type="text" placeholder="Address Line 1 *" />
+                        </div>
+                        <div class="input-container">
+                          <input name="adLine2" type="text" placeholder="Address Line 2" />
+                        </div>
+                        <div class="input-container">
+                          <input name="landmark" type="text" placeholder="Landmark" />
+                        </div>
+                      </div>
+                      <div class="right-sec">
+                        <div class="input-container">
+                          <input name="pincode" maxlength="6" type="text" placeholder="Pincode *" />
+                        </div>
+                        <div class="input-container">
+                          <input name="city" type="text" placeholder="City *" />
+                        </div>
+                        <div class="input-container">
+                          <select name="states">
+                            <option disabled selected value>--Select State--</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="haryana">Haryana</option>
+                            <option value="uttarpradesh">Uttar Pradesh</option>
+                          </select>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="errorMessage" id="errorTag"></div>
+                    <button class="primary-btn" onclick="validateShipping()">
+                      Continue
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button disabled id="billingButton" class="btn btn-link collapsed" data-toggle="collapse"
+                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Billing
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class=" card-body ordercard-container">
+                    <div class="ShipBillSame">
+                      <input onclick="sameAddr()" type="checkbox" name="same-as">
+                      Same as Shipping Address
+                    </div>
+                    <div class="subsection billingHidden ">
+                      <h4>Your Details</h4>
+                      <hr>
+                      <div class="left-sec">
+                        <div class="input-container">
+                          <input name="bfname" type="text" placeholder="First Name *" />
+                        </div>
+                        <div class="input-container">
+                          <input name="blname" type="text" placeholder="Last Name *" />
+                        </div>
+                      </div>
+                      <div class="right-sec">
+                        <div class="input-container">
+                          <input name="bemail" type="email" placeholder="Email *" />
+                        </div>
+                        <div class="input-container">
+                          <input name="bmnum" type="text" maxlength="10" placeholder="Mobile Number *" />
+                        </div>
+                      </div>
+                    </div>
+                    <div class="subsection billingHidden">
+                      <h4>Address</h4>
+                      <hr>
+                      <div class="left-sec">
+                        <div class="input-container">
+                          <input name="badLine1" type="text" placeholder="Address Line 1 *" />
+                        </div>
+                        <div class="input-container">
+                          <input name="badLine2" type="text" placeholder="Address Line 2" />
+                        </div>
+                        <div class="input-container">
+                          <input name="blandmark" type="text" placeholder="Landmark" />
+                        </div>
+                      </div>
+                      <div class="right-sec">
+                        <div class="input-container">
+                          <input name="bpincode" maxlength="6" type="text" placeholder="Pincode *" />
+                        </div>
+                        <div class="input-container">
+                          <input name="bcity" type="text" placeholder="City *" />
+                        </div>
+                        <div class="input-container">
+                          <select name="bstates">
+                            <option disabled selected value>--Select State--</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="haryana">Haryana</option>
+                            <option value="uttarpradesh">Uttar Pradesh</option>
+                          </select>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="errorMessage" id="berrorTag"></div>
+                    <button class="primary-btn" onclick="validateBilling()">
+                      Continue
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="order-right">
+          <div class="orderdetail-cards">
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <div class=" btn-link">
+                      Price Details
+                    </div>
+                  </h5>
+                </div>
+
+                <div id="collapseOne" class="collapse show">
+                  <div class="card-body ordercard-container">
+                    <h4>Your Personal Details</h4>
+                    <hr>
+                    <div class="left-sec">
+                      <label>Name</label>
+                      <input name="name" type="email" />
+                    </div>
+                    <div class="right-sec">
+                      <h5>Name</h5>
+                      <input name="entry.1485618182" type="email" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- End Order Area -->
+  <section id="form">
+    <div class="form-container">
+      <script type="text/javascript">var submitted = false;</script>
+      <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+        onload="if(submitted)  {window.location='index.html';}"></iframe>
+      <form
+        name="OrderForm"
+        action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSc_YFogUR04SSxB3D0Wwg4E0Etv_hHgqqygYrVBYrNtEY-Tzg/formResponse"
+        method="post" target="hidden_iframe" onsubmit="submitted=true;">
+        <input id="OrderNum" style="display:none;" type="text" name="entry.2139830695" value="SD">
+        <input id="model" style="display:none;" type="text" name="entry.1628359458" value="ASD">
+        <input id="Quantity" style="display:none;" type="text" name="entry.1381337050" value="ASD">
+        <input id="SFName" style="display:none;" type="text" name="entry.1908490426" value="ASD">
+        <input id="SLName" style="display:none;" type="text" name="entry.1516532744" value="ASD">
+        <input id="SEmail" style="display:none;" type="text" name="entry.57062039" value="ASD">
+        <input id="SMobileNum" style="display:none;" type="text" name="entry.308270842" value="ASD">
+        <input id="SAdLineOne" style="display:none;" type="text" name="entry.1903357183" value="ASD">
+        <input id="SAdLineTwo" style="display:none;" type="text" name="entry.2143039523" value="ASD">
+        <input id="SLandmark" style="display:none;" type="text" name="entry.1618558688" value="">
+        <input id="SPincode" style="display:none;" type="text" name="entry.1813395298" value="">
+        <input id="SCity" style="display:none;" type="text" name="entry.1891937365" value="">
+        <input id="SState" style="display:none;" type="text" name="entry.186707264" value="">
+        <input id="BFName" style="display:none;" type="text" name="entry.816850005" value="">
+        <input id="BLName" style="display:none;" type="text" name="entry.422615455" value="">
+        <input id="BEmail" style="display:none;" type="text" name="entry.1816609370" value="">
+        <input id="BMobileNum" style="display:none;" type="text" name="entry.200972955" value="">
+        <input id="BAdLineOne" style="display:none;" type="text" name="entry.1455281235" value="">
+        <input id="BAdLineTwo" style="display:none;" type="text" name="entry.1467122132" value="">
+        <input id="BLandmark" style="display:none;" type="text" name="entry.472926048" value="">
+        <input id="BPincode" style="display:none;" type="text" name="entry.2105606665" value="">
+        <input id="BCity" style="display:none;" type="text" name="entry.922493049" value="">
+        <input id="BState" style="display:none;" type="text" name="entry.1551961549" value="">
+        <!-- <input type="submit" value="Submit" /> -->
+      </form>
+    </div>
+  </section>
+
+
+ <!-- End Order Area -->
+ <!-- <section id="form">
+  <div class="form-container">
+
+
+    <script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='index.html';}"></iframe>
+ 
+     <form action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfi9OCeG7i5wqqnENYCmxJ7DKoVfbeCZviDoQLX9ppYX7xTRw/formResponse" method="post" target="hidden_iframe"
+     onsubmit="submitted=true;">
+           <label>Name</label>
+           <input name="entry.385164014" type="text" value="hello"/>
+      
+            <label >Email</label>
+            <input name="entry.1485618182" type="text" value="hello"/>
+      
+            <input type="submit" value="Submit" />
+      
+     </form>
+  </div>
+</section> -->
+
+  <script src="js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="js/superfish.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/order.js"></script>
+
+
+
+</body>
+
+</html>
+
+
+
+<!-- Start Order Area -->
+<!-- <section class="order-area section-gap" id="order-detail">
+  <div class="container">
+    
+    <div class="row d-flex justify-content-center">
+      <div class="menu-content pb-60 col-lg-10">
+        <div class="title text-center">
+          <h1 class="mb-10">Order Details</h1>
+          <p>Please provide details to proceed with your order.</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="row justify-content-center">
+      <div class="orderdetail-cards">
+        <div id="accordion">
+          
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link " data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    1. Billing Details
+                  </button>
+                </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body ordercard-container">
+                  <h4>Your Personal Details</h4>
+                  <hr>
+                  <div class="left-sec">
+                    <label>Name</label>
+                    <input name="name" type="email"/>
+                  </div>
+                  <div class="right-sec">
+                    <h5>Name</h5>
+                    <input name="entry.1485618182" type="email"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    2. Delivery Details
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  3. Order Summary
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+                </div>
+              </div>
+            </div>
+        </div>							
+      </div>
+    </div>
+           
+  </div>	
+
+</section> -->
+<!-- End Order Area -->

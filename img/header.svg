@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="800"
+   height="40"
+   version="1.1"
+   viewBox="0 0 211.66666 10.583334"
+   id="svg13"
+   sodipodi:docname="header.svg"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     id="namedview15"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="1.0411943"
+     inkscape:cx="454.53094"
+     inkscape:cy="111.2743"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg13" />
+  <defs
+     id="defs7">
+    <linearGradient
+       id="linearGradient1530"
+       x1="67.876999"
+       x2="169.02"
+       y1="61.207001"
+       y2="61.207001"
+       gradientTransform="matrix(9.3907309,0,0,8.0982761,-587.20055,-445.6761)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#930046"
+         offset="0"
+         id="stop2" />
+      <stop
+         stop-color="#fe3308"
+         offset="1"
+         id="stop4" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1530"
+       id="linearGradient918"
+       x1="-1.8724222e-10"
+       y1="19.999996"
+       x2="149.77734"
+       y2="19.999996"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     id="path849"
+     style="fill:url(#linearGradient918);fill-opacity:1;stroke-width:0.400003"
+     d="M 20.050781 0 A 20.080808 19.999936 0 0 0 0 20 A 20.080808 19.999936 0 0 0 20.080078 40 L 20.111328 40 L 57.046875 40 L 739.43555 40 L 739.43555 39.992188 L 764.14258 39.992188 L 799.99219 0.0234375 L 739.43555 0.0078125 L 739.43555 0 L 38.451172 0 L 38.451172 0.00390625 L 20.082031 0 A 20.080808 19.999936 0 0 0 20.050781 0 z "
+     transform="scale(0.26458334)" />
+</svg>

@@ -40,9 +40,12 @@
 
 .orderF{
   position:absolute;
-  left:50%;
-  top:20%;
-  margin-left:-202px;
+  left:0;
+  right:0;
+  margin:auto;
+  margin-top: 200px;
+  
+  width:fit-content;
   background-color: #d7003f;
 }
 
@@ -237,8 +240,8 @@
   margin:5px;
   margin-top: -10px;
   margin-bottom: 10px;
-
 }
+
 .product-description{
   width:100%;
   height: fit-content;
