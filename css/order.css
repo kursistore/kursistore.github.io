@@ -1,6 +1,4 @@
 
-
-
 .form-container{
   position: relative;  
   width: 100%;
@@ -16,7 +14,7 @@
 }
 
 .order-area {
-  background: url(../img/faq-bg2.jpg) center;
+  background: url(../img/faq/faq-bg.jpg) center;
   background-size: cover;
 }
 
@@ -141,7 +139,7 @@
     float:left;
     height: fit-content;
     width: 100%;
-    padding: 5px;
+    padding: 0px 5px;
   }
 }
 
@@ -171,12 +169,6 @@
   .ordercard-container input, select{
    width:100%;
   }
-  input[type=number]::-webkit-inner-spin-button, 
-  input[type=number]::-webkit-outer-spin-button {  
-
-   opacity: 1;
-
-}
 }
 
 .ordercard-container input:focus,select:focus {
@@ -205,6 +197,13 @@
   font-weight: 500;
   float: left;
 }
+
+@media (max-width: 991px) {
+  .errorMessage{
+    width: 60%;
+  }
+}
+
 .ordercard-container button {
   float: right;
   background-color: rgb(75, 75, 75);

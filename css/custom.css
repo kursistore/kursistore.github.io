@@ -38,7 +38,7 @@
 .logo img{
   height: 65px;
   margin-top: 40px !important;
-  background: url(../img/logoso.png) no-repeat;
+  background: url(../img/header/logo-shadow.png) no-repeat;
   background-size:contain;
   transition: all 0.5s;
 }
@@ -54,7 +54,7 @@
   .logo img{
     height: 60px;
     margin-top: 20px !important;
-    background: url(../img/logoso.png) no-repeat;
+    background: url(../img/header/logo-shadow.png) no-repeat;
     background-size:contain;
     transition: all 0.5s;
   }
@@ -114,7 +114,7 @@ max-width: 1200px !important;
 
   .banner-area{
     height:800px;
-    background:url(../img/banner-bgm.png);
+    background:url(../img/banner/banner-bgm.png);
     background-size: cover;
   }
 
@@ -166,6 +166,10 @@ max-width: 1200px !important;
 
 /* About Us */
 
+.video-sec-area{
+  padding-top: 60px;
+}
+
 .video-left{
   padding-right: 3%;
 }
@@ -173,7 +177,16 @@ max-width: 1200px !important;
   color: black;
 }
 
+.main-image{
+  width:auto;
+  height: 550px;
+}
 
+@media (max-width: 800px) {
+  .main-image{
+    height: 400px;
+  }
+}
 .video-left h6{
   font-size: 17px;
   font-weight: 450;

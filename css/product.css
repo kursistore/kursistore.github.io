@@ -182,6 +182,12 @@
   display: block;
 }
 
+@media (max-width: 991px) {
+  .delivery-check{
+    width: 98%;
+  }
+}
+
 .left-svg{
   float:left;
   width: fit-content;
@@ -270,6 +276,12 @@
 @media (max-width: 991px) {
   .quantityinput{
     margin-bottom:20px;
+    margin-left:5px;
+    box-shadow: 0px 2px 5px 2px rgba(66, 25, 25, 0.2);
+    caret-color: #fe3308;
+  }
+  .buybutton{
+    box-shadow: 0px 2px 8px 2px rgba(66, 25, 25, 0.3);
   }
 }
 
@@ -320,6 +332,15 @@
   margin-top: 30px;
 }
 
+@media (max-width: 991px) {
+  .detail-section{
+    margin-top: 0px;
+  }
+  .features-section{
+    margin-top: 10px !important;
+  }
+}
+
 .detail-section-title{
   padding:20px 0;
   padding-bottom: 0;
@@ -367,8 +388,6 @@
   box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .feature{
   width: 25%;
   float: left;
@@ -388,7 +407,7 @@
   }
 
   .boundbox{
-    width:90%;
+    width:83%;
     margin:0 auto;
   }
 
