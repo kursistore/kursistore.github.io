@@ -1,7 +1,55 @@
+
+
+//to get order details
+var modelNo="";
+var price="";
+var quantity="";
+
+function parseData () {
+  var url = document.location.href,
+      params = url.split('?')[1].split('&'),
+      data = {}, tmp;
+  for (var i = 0, l = params.length; i < l; i++) {
+       tmp = params[i].split('=');
+       data[tmp[0]] = tmp[1];
+  }
+  modelNo = data.m;
+  price = decodeURIComponent(data.p);
+  quantity= data.q;
+
+  // console.log(data.f);
+  // console.log(data.m);
+  // console.log(decodeURIComponent(data.p));
+  // console.log(data.q);
+  setOdetails();
+}
+
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'INR',
+  minimumFractionDigits: 0
+})
+
+//to set Order Details
+function setOdetails(){
+  document.getElementById("ODimg").src="./img/products/"+modelNo+"/00.png";
+  document.getElementById("ODmodel").innerHTML=modelNo;
+  document.getElementById("ODquantity").innerHTML=quantity;
+  document.getElementById("ODprice").innerHTML='<font face="Courier" style="font-size: 17px;">₹</font> '+ price.slice(2,);
+  document.getElementById("ODtotal").innerHTML='<font face="Courier" style="font-size: 24px;">₹</font> '
+                                                +(formatter.format((price.match(/\d+/g)[0]+price.match(/\d+/g)[1])*quantity).slice(1,));
+}
+
+
+
+//----------------  Form Handling  ----------------//
+
+// to check numeric input
 function isNumeric(value) {
   return /^-?\d+$/.test(value);
 }
 
+//to validate shipping form
 function validateShipping() {
   var fname = document.getElementsByName("fname")[0];
   var lname = document.getElementsByName("lname")[0];
@@ -82,6 +130,7 @@ function validateShipping() {
   }
 }
 
+//to validate billing form
 function validateBilling() {
   if (document.getElementsByName("same-as")[0].checked) {
     //console.log("Checked");
@@ -166,38 +215,50 @@ function validateBilling() {
   }
 }
 
+//to continue to billing section
 function conBilling() {
   document.getElementById("billingButton").click();
 }
 
+//to hide billing form on same address as shipping
 function sameAddr() {
   var hidden = document.getElementsByClassName("billingHidden");
   hidden[0].classList.toggle("display-none");
   hidden[1].classList.toggle("display-none");
 }
 
+function testbutton(){
+  console.log(orderNumber());
+}
+
+
+//to generate a ordernumber
 function orderNumber() {
   var currentDate = new Date();
   var year = currentDate.getFullYear() - 2000;
   var month = currentDate.getMonth() + 1;
   var date = currentDate.getDate();
-
+  var hour = currentDate.getHours();
+  var minute = currentDate.getMinutes();
+  var second = currentDate.getSeconds();
   if (month < 10) {
     month = "0" + month;
   }
   if (date < 10) {
     date = "0" + date;
   }
-  var orderdate = date + "/" + month + "/" + (year + 2000);
-  var ordernumber = year + "" + month + "" + date;
-  ordernumber =
-    ordernumber +
-    "" +
-    currentDate.getHours() +
-    "" +
-    currentDate.getMinutes() +
-    "" +
-    currentDate.getSeconds();
+  if (hour < 10) {
+    hour = "0" + hour;
+  }
+  if (minute < 10) {
+    minute = "0" + minute;
+  }
+  if (second < 10) {
+    second = "0" + second;
+  }
+  //var orderdate = date + "/" + month + "/" + (year + 2000);
+
+  //var ordernumber = year + "" + month + "" + date + "" + hour + "" + minute + "" + second;
 
   // var uri ="\n Order No.: " + ordernumber
   //         +"\n OrderDate: " + orderdate
@@ -207,9 +268,10 @@ function orderNumber() {
 
   //window.open(url, '_blank');
 
-  return ordernumber;
+  return (year + "" + month + "" + date + "" + hour + "" + minute + "" + second);
 }
-//order();
+
+//to submit order form with values taken from shipping and billing forms
 function order() {
   var orderNum = document.getElementById("OrderNum");
   var model = document.getElementById("model");
@@ -279,7 +341,7 @@ function order() {
     ].innerText;
   }
   document.getElementsByName("OrderForm")[0].submit();
-
+  window.open("confirmation.html","_self")
   // console.log(OrderNum.value);
   // console.log(model.value);
   // console.log(Quantity.value);

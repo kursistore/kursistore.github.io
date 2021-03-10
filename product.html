@@ -67,7 +67,7 @@
 	<!-- Start Product Area -->
 	<section class="product-area">
 		<div class="content-container">
-			
+
 			<div class="row justify-content-center align-items-center">
 				<div class="product-left">
 					<div class="main-images">
@@ -81,7 +81,7 @@
 						<img class="main-image" src="img/products/MSTBM01VRT03/90.png" alt="">
 						<!-- <embed class="main-image" type="text/html" src="img/products/MSTBM01VRT03/360.html"
 							style="width:600px;height:900px"> -->
-						
+
 						<img class="main-image" src="img/q1.jpeg" alt="">
 						<img class="main-image" src="img/q2.jpeg" alt="">
 					</div>
@@ -98,7 +98,7 @@
 				</div>
 				<div class="product-right">
 					<h6><b>NEW</b></h6>
-					<h1>Workstation</h1>
+					<h1>WorkStation</h1>
 					<h4>Folding Study Table</h4>
 					<div class="price-tag">
 						<h3 id="price">
@@ -117,28 +117,30 @@
 						</div>
 						<div class="left-section">
 							<form id="pincodeForm" action="#" return="false">
-								<input type="text" id="pincode" name="pincode" placeholder="Enter Delivery Pincode" maxlength="6">
+								<input type="text" id="pincodeinput" name="pincode" placeholder="Enter Delivery Pincode" maxlength="6">
 							</form>
 						</div>
 						<div class="right-section">
 							<button onclick="checkPincode()"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
 						</div>
 					</div>
+					
 					<div class="product-description">
 						<p>
-							<span>All new modern Design for Study or Home Office.</span>
+							<span>The all new <b>WorkStation</b> is perfect for your Study or Home Office.</span>
 						</p>
 						<p>
-							Kursi Store Products are carefully Designed 
+							Kursi Store Products are carefully designed and tested towards the customer satisfaction end goal.
 						</p>
 					</div>
-					<a class="text-uppercase primary-btn"
-						onclick="order()"
-						href="#"
-						>
+					<div class="quantityinput">
+						<label><h5>Quantity :</h5></label>
+						<input type="number" id="quantity" name="quantity" value="1" max="15" min="1">
+					</div>
+					<a class="text-uppercase primary-btn buybutton" onclick="passData()" href="#">
 						Buy Now
 					</a>
-					
+
 					<div class="detail-section">
 						<div class="detail-section-title">
 							<h3>Specifications</h3>
@@ -212,7 +214,7 @@
 									<col span="1" style="width: 75%;">
 								</colgroup>
 								<tr>
-									<th>Primary Material</td>
+									<th>Material</td>
 									<td>Engineered Wood</td>
 								</tr>
 								<tr>
@@ -235,8 +237,8 @@
 								</colgroup>
 								<tr>
 									<th>Installation Details</td>
-									<td>The installation for this product is free of cost as part of this 
-										purchase (valid only for Knock Down products). Our Service Partner 
+									<td>The installation for this product is free of cost as part of this
+										purchase (valid only for Knock Down products). Our Service Partner
 										will install the product on delivery day.</td>
 								</tr>
 							</table>
@@ -264,13 +266,17 @@
 							<hr>
 							<h4>Disclaimer</h4>
 							<p>
-								- The color of the product may vary slightly compared to the picture displayed on your screen. This is due to lighting, pixel quality and color settings
+								- The color of the product may vary slightly compared to the picture displayed on your screen. This is
+								due to lighting, pixel quality and color settings
 								<br>
-								- Please check the product's dimensions to ensure the product will fit in the desired location. Also, check if the product will fit through the entrance(s) and door(s) of the premises
+								- Please check the product's dimensions to ensure the product will fit in the desired location. Also,
+								check if the product will fit through the entrance(s) and door(s) of the premises
 								<br>
-								- Please expect an unevenness of up to 5 mm in the product due to differences in surfaces and floor levels
+								- Please expect an unevenness of up to 5 mm in the product due to differences in surfaces and floor
+								levels
 								<br>
-								- Person delivering the product, will not take up any type of civil work, such as drilling holes in the wall to mount the product. The product will only be assembled.
+								- Person delivering the product, will not take up any type of civil work, such as drilling holes in the
+								wall to mount the product. The product will only be assembled.
 						</div>
 					</div>
 				</div>
@@ -296,21 +302,21 @@
 						<img src="img/features/f-icon2.png" alt="">
 					</div>
 					<h6>Warranty</h6>
-						<p>Warrenty on all products</p>
+					<p>Warrenty on all products</p>
 				</div>
 				<div class="feature">
 					<div class="f-icon">
 						<img src="img/features/f-icon3.png" alt="">
 					</div>
 					<h6>Support</h6>
-						<p>Happy to help anytime</p>
+					<p>Happy to help anytime</p>
 				</div>
 				<div class="feature">
 					<div class="f-icon">
 						<img src="img/features/f-icon4.png" alt="">
 					</div>
 					<h6>Secure Payment</h6>
-						<p>Secured by UPI</p>
+					<p>Secured by UPI</p>
 				</div>
 			</div>
 		</div>
@@ -377,7 +383,7 @@
 	<script src="js/superfish.min.js"></script>
 	<script src="js/jquery.magnific-popup.min.js"></script>
 	<script src="js/product.js"></script>
-	<script src="js/order.js"></script>
+	<script src="js/header.js"></script>
 </body>
 
 </html>
