@@ -267,6 +267,12 @@
   transition:all 0.3s;
 }
 
+@media (max-width: 991px) {
+  .quantityinput{
+    margin-bottom:20px;
+  }
+}
+
 .quantityinput:hover{
   box-shadow: 0px 2px 5px 2px rgba(66, 25, 25, 0.2);
   transition: all 0.3s;
