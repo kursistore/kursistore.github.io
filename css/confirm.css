@@ -1,0 +1,17 @@
+
+
+.confirm-container{
+  height: fit-content;
+  width: 70%;
+  margin:0 auto;
+  text-align: center;
+}
+
+.confirm-container img{
+  width: 100px;
+  height: auto;
+}
+
+.confirm-container h3{
+  font-size: 18px;
+}

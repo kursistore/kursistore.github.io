@@ -119,14 +119,14 @@
             </div>
           </div>
         </div>
+       
         <div class="order-left">
           <div class="orderdetail-cards">
-            <div id="accordion">
-
+            <div id="accordion"> 
               <div class="card">
                 <div class="card-header" id="headingOne">
                   <h5 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                    <button class="btn btn-link" id="shippingButton" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                       aria-controls="collapseOne">
                       Shipping
                     </button>
@@ -193,7 +193,6 @@
                   </div>
                 </div>
               </div>
-
               <div class="card">
                 <div class="card-header" id="headingTwo">
                   <h5 class="mb-0">
@@ -206,10 +205,11 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                   <div class=" card-body ordercard-container">
                     <div class="ShipBillSame">
-                      <input onclick="sameAddr()" type="checkbox" name="same-as">
+                      <input checked onclick="sameAddr()" type="checkbox" name="same-as">
                       Same as Shipping Address
                     </div>
-                    <div class="subsection billingHidden ">
+                    
+                    <div class="subsection billingHidden display-none">
                       <h4>Your Details</h4>
                       <hr>
                       <div class="left-sec">
@@ -229,7 +229,8 @@
                         </div>
                       </div>
                     </div>
-                    <div class="subsection billingHidden">
+                    
+                    <div class="subsection billingHidden display-none">
                       <h4>Address</h4>
                       <hr>
                       <div class="left-sec">
@@ -262,7 +263,7 @@
                       </div>
                     </div>
                     <div class="errorMessage" id="berrorTag"></div>
-                    <button class="primary-btn" onclick="validateBilling()">
+                    <button id="checkoutbutton" class="primary-btn" onclick="validateBilling()">
                       Checkout
                     </button>
                   </div>
@@ -308,13 +309,6 @@
     </div>
   </section>
   <!-- End Order Area -->
-
-  <!-- Start Form Area -->
-
-
-
-  <!-- End Form Area -->
-
 
   <!-- start footer Area -->
   <footer class="footer-area section-gap">

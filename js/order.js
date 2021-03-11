@@ -1,21 +1,20 @@
-
-
 //to get order details
-var modelNo="";
-var price="";
-var quantity="";
+var modelNo = "";
+var price = "";
+var quantity = "";
 
-function parseData () {
+function parseData() {
   var url = document.location.href,
-      params = url.split('?')[1].split('&'),
-      data = {}, tmp;
+    params = url.split("?")[1].split("&"),
+    data = {},
+    tmp;
   for (var i = 0, l = params.length; i < l; i++) {
-       tmp = params[i].split('=');
-       data[tmp[0]] = tmp[1];
+    tmp = params[i].split("=");
+    data[tmp[0]] = tmp[1];
   }
   modelNo = data.m;
   price = decodeURIComponent(data.p);
-  quantity= data.q;
+  quantity = data.q;
 
   // console.log(data.f);
   // console.log(data.m);
@@ -24,23 +23,26 @@ function parseData () {
   setOdetails();
 }
 
-const formatter = new Intl.NumberFormat('en-US', {
-  style: 'currency',
-  currency: 'INR',
-  minimumFractionDigits: 0
-})
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "INR",
+  minimumFractionDigits: 0,
+});
 
 //to set Order Details
-function setOdetails(){
-  document.getElementById("ODimg").src="./img/products/"+modelNo+"/00.png";
-  document.getElementById("ODmodel").innerHTML=modelNo;
-  document.getElementById("ODquantity").innerHTML=quantity;
-  document.getElementById("ODprice").innerHTML='<font face="Courier" style="font-size: 17px;">₹</font> '+ price.slice(2,);
-  document.getElementById("ODtotal").innerHTML='<font face="Courier" style="font-size: 24px;">₹</font> '
-                                                +(formatter.format((price.match(/\d+/g)[0]+price.match(/\d+/g)[1])*quantity).slice(1,));
+function setOdetails() {
+  document.getElementById("ODimg").src =
+    "./img/products/" + modelNo + "/00.png";
+  document.getElementById("ODmodel").innerHTML = modelNo;
+  document.getElementById("ODquantity").innerHTML = quantity;
+  document.getElementById("ODprice").innerHTML =
+    '<font face="Courier" style="font-size: 17px;">₹</font> ' + price.slice(2);
+  document.getElementById("ODtotal").innerHTML =
+    '<font face="Courier" style="font-size: 24px;">₹</font> ' +
+    formatter
+      .format((price.match(/\d+/g)[0] + price.match(/\d+/g)[1]) * quantity)
+      .slice(1);
 }
-
-
 
 //----------------  Form Handling  ----------------//
 
@@ -218,19 +220,30 @@ function validateBilling() {
 //to continue to billing section
 function conBilling() {
   document.getElementById("billingButton").click();
+  
+  setTimeout(function (){
+    var rect = document.getElementById("billingButton").getBoundingClientRect();
+    //window.scrollTo(rect.left,rect.top);
+  },300);
+  
 }
 
 //to hide billing form on same address as shipping
 function sameAddr() {
   var hidden = document.getElementsByClassName("billingHidden");
-  hidden[0].classList.toggle("display-none");
-  hidden[1].classList.toggle("display-none");
+  var checkbox = document.getElementsByName("same-as")[0];
+  if (checkbox.checked) {
+    hidden[0].classList.add("display-none");
+    hidden[1].classList.add("display-none");
+  } else {
+    hidden[0].classList.remove("display-none");
+    hidden[1].classList.remove("display-none");
+  }
 }
 
-function testbutton(){
+function testbutton() {
   console.log(orderNumber());
 }
-
 
 //to generate a ordernumber
 function orderNumber() {
@@ -268,8 +281,22 @@ function orderNumber() {
 
   //window.open(url, '_blank');
 
-  return (year + "" + month + "" + date + "" + hour + "" + minute + "" + second);
+  return year + "" + month + "" + date + "" + hour + "" + minute + "" + second;
 }
+
+//to pass data to confirm page
+function passData(odNum) {
+  window.open(
+    "./confirm.html?f=ttyshHUIhsksn23iddbdcUUIok838hschb2osmnfy39SHiJBkjOOk8923982" +
+      "&o=" +
+      odNum +
+      "&c=0",
+    "_self"
+  );
+  // window.open("./confirm.html","_self");
+  //open in same tab
+}
+
 
 //to submit order form with values taken from shipping and billing forms
 function order() {
@@ -340,8 +367,12 @@ function order() {
       document.getElementsByName("bstates")[0].selectedIndex
     ].innerText;
   }
+  document.getElementById("checkoutbutton").disabled=true;
+  //console.log("Clicked");
   document.getElementsByName("OrderForm")[0].submit();
-  window.open("confirmation.html","_self")
+  setTimeout(function (){passData(orderNum.value)}, 1500);
+  
+  //window.open("confirmation.html", "_self");
   // console.log(OrderNum.value);
   // console.log(model.value);
   // console.log(Quantity.value);
@@ -365,5 +396,4 @@ function order() {
   // console.log(BPincode.value);
   // console.log(BCity.value);
   // console.log(BState.value);
-
 }

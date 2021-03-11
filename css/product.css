@@ -271,6 +271,7 @@
   float:left;
   margin-right: 40px;
   transition:all 0.3s;
+  cursor: pointer;
 }
 
 @media (max-width: 991px) {
@@ -295,17 +296,19 @@
   color: #222;
   font-size: medium;
   font-weight: 600;
-  margin-top: 6px;
+  margin-top: 0px;
+  cursor: pointer;
+  margin-top: 4px;
 }
 
 .quantityinput input{
   width: 35px;
   border: none;
-  margin-top: 2px;
   border-radius: 15px;
   color: #222;
   font-weight: 500;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .quantityinput input:focus{

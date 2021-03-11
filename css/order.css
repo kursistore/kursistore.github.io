@@ -41,15 +41,26 @@
 
 .order-section .order-left{
   float: left;
-  width:70%;
+  width:73%;
   padding:0;
-  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .order-section .order-right{
   float: left;
-  width:30%;
+  width:27%;
   padding: 0;
+}
+
+.scrolto{
+  width:100%;
+    float: none;
+    height: 10px;
+    background-color: #222;
+}
+
+.menu-content{
+  padding-bottom: 40px;
 }
 
 @media (max-width: 991px) {
@@ -70,11 +81,16 @@
   
   .order-section .order-right{
     float: none;
-    width:100%;
+    width:90%;
     padding: 0;
     margin-bottom:35px;
   }
-  
+  .scrolto{
+    width:100%;
+    float: none;
+    height: 10px;
+    background-color: #222;
+  }
 }
 
 .orderdetail-cards .card {
@@ -228,15 +244,7 @@
   color: #fff;
 }
 
-.order-right .detail-container{
-  
-  width: 90%;
-  height: fit-content;
-  background: #222;
-  border-radius:30px;
-  padding: 20px;
-  
-}
+
 
 @media (max-width: 991px) {
   .order-right .detail-container{
@@ -244,7 +252,7 @@
   }
 }
 .order-right .detail-container{
-  width: 90%;
+  width: 100%;
   height: fit-content;
   border-radius:20px;
   padding: 20px;
