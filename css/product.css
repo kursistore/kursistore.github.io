@@ -292,7 +292,7 @@
 }
 
 .quantityinput h5{
-  padding-right: 10px;
+  padding-right: 2px;
   color: #222;
   font-size: medium;
   font-weight: 600;
@@ -306,8 +306,8 @@
   border: none;
   border-radius: 0 15px 15px 0;
   color: #222;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 16px;
   cursor: pointer;
 }
 
