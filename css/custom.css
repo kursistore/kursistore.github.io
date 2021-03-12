@@ -1,11 +1,12 @@
+
 /*
+
 1. #fdb700
 2. #fe7f07
 3. #fe3308
 4. #d7003f
 5. #930046
 6. #4a0048
-
 
 */
 
@@ -23,7 +24,10 @@
   }
 }
 
-/* Header */
+
+/*------------------------------------------------------*/
+/*                        HEADER                        */
+/*------------------------------------------------------*/
 
 .logo{
   height: 104px;
@@ -70,16 +74,45 @@
 max-width: 1200px !important;
 }
 
-/* Banner */
+
+/*------------------------------------------------------*/
+/*                        BANNER                        */
+/*------------------------------------------------------*/
+
+.banner-area {
+  background: url(../img/banner/banner-bg.png) center;
+  background-size: cover;
+  height:700px;
+}
 
 .banner-area .container{
   max-width: inherit;
 }
+
+.banner-content {
+  margin-top: 0px;
+  text-align: center;
+}
+
+.banner-content h1 {
+  color: #fff;
+  font-size: 55px;
+  font-weight: 700;
+  line-height: 1em;
+  margin-top: 20px;
+}
+
+.banner-content h5 {
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
 .banner-left{
   float: left;
   text-align: left;
-  padding-right: 15%;
   max-width: 60%;
+  padding-left: 40px;
+  padding-right: 290px;
 }
 
 .banner-right{
@@ -90,12 +123,7 @@ max-width: 1200px !important;
   width: 400px;
   margin-right: -100px;
   padding-right: 0px;
-
 }
-.banner-right h1{
-  font-size: 60px !important;
-}
-
 
 #slideset {
   height: 100%;
@@ -105,29 +133,41 @@ max-width: 1200px !important;
 }
 
 #slideset img{
-  height:600px;
+  height:610px;
   width:inherit;
   object-fit: contain;
+  margin-top: 20px;
 }
   
-@media (max-width: 991px) {
-
+@media (min-width: 1400px) {
   .banner-area{
-    height:800px;
+    height:730px;
+  }
+}
+
+@media (max-width: 991px) {
+  .banner-area{
+    height:825px;
     background:url(../img/banner/banner-bgm.png);
     background-size: cover;
   }
-
   .banner-area .primary-btn{
     margin-top: 5%;
+  }
+  .banner-content h1 {
+    font-size: 45px;
+  }
+  .banner-content-left{
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .banner-left{
     margin-top: 150px;
     text-align: center;
     padding:0;
     max-width: 90%;
+    padding-bottom: 20px;
   }
-
   .banner-right{
     height: 83%;
     width:90%;
@@ -135,12 +175,10 @@ max-width: 1200px !important;
     padding-right: 15px;
     margin-right: 0px;
   }
-  
   #slideset {
     max-width:95%;
     margin-left: 20px;
   }
-  
   #slideset img{
     object-fit: contain;
     height:30em
@@ -164,7 +202,11 @@ max-width: 1200px !important;
 #slideset > *:nth-child(2) {animation-delay: 4s}
 #slideset > *:nth-child(3) {animation-delay: 8s}
 
-/* About Us */
+
+
+/*------------------------------------------------------*/
+/*                      ABOUT US                        */
+/*------------------------------------------------------*/
 
 .video-sec-area{
   padding-top: 60px;
@@ -184,7 +226,9 @@ max-width: 1200px !important;
 
 @media (max-width: 800px) {
   .main-image{
-    height: 400px;
+    height: auto;
+    width: 90%;
+    margin: auto;
   }
 }
 .video-left h6{
@@ -223,8 +267,10 @@ max-width: 1200px !important;
   }
 }
 
-/* Top Course */
 
+/*------------------------------------------------------*/
+/*                     TOP COURSE                       */
+/*------------------------------------------------------*/
 
 #top-course .title h1{
   font-size: 44px;
@@ -248,36 +294,90 @@ max-width: 1200px !important;
   color: rgba(245, 245, 245, 0.90) !important;
 }
 
-/* Shop */
 
-/* #unique .title h1{
+/*------------------------------------------------------*/
+/*                        SHOP                          */
+/*------------------------------------------------------*/
+
+/* #shop .title h1{
   color:rgb(20, 20, 20) !important;
   font-size: 48px;
 } */
 
-#unique .title p{
+#shop .title p{
   color:rgb(200, 200, 200) !important;
   font-size: 16px;
 }
 
-#unique .rsign{
+#shop .rsign{
  font-family:monospace
 }
 
+/*------------------------------------------------------*/
+/*                      FEATURE                         */
+/*------------------------------------------------------*/
 
-/* Reviews */
+.single-service {
+  min-height: 210px;
+}
+
+.service-area p{
+  color:#222;
+}
+
+.service-area .header-text p{
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/*------------------------------------------------------*/
+/*                       REVIEW                         */
+/*------------------------------------------------------*/
+
+.review-area{
+  /* 
+  background-image: -moz-linear-gradient(0deg,rgb(93, 93, 93) 0%, rgb(54, 54, 54) 100%);
+  background-image: -webkit-linear-gradient(0deg,rgb(93, 93, 93) 0%, rgb(54, 54, 54) 100%);
+  background-image: -ms-linear-gradient(0deg,rgb(93, 93, 93) 0%, rgb(54, 54, 54) 100%);
+  */
+  background:linear-gradient(94.3deg, rgb(26, 33, 64) 10.9%, rgb(81, 84, 115) 87.1%)
+}
+
+.review-area p{
+  color:#fff;
+}
+
+.single-review p{
+  color: #222;
+}
+
+.review-area h1{
+ color:#fff
+}
 
 @media (max-width: 800px) {
   .review-area{
-    padding-bottom: 0;
+    padding-bottom: 40px;
   }
 }
 
 
-/* Footer */
+/*------------------------------------------------------*/
+/*                       FOOTER                         */
+/*------------------------------------------------------*/
+
 .footer-area p{
   color: rgba(245, 245, 245, 0.7);
 }
 .footer-social i{
   font-size: 25px;
+}
+.form-control{
+  float:left;
+  width:65% !important;
+  color: #fff !important;
+  font-weight: 400 !important;
+}
+.submitbutton{
+  float:left;
 }

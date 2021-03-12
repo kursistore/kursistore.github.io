@@ -1,3 +1,6 @@
+//service pincodes
+var pins = ["251001","201204"];
+
 //to get order details
 var modelNo = "";
 var price = "";
@@ -23,6 +26,7 @@ function parseData() {
   setOdetails();
 }
 
+//to format mutiplied price into inr format
 const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "INR",
@@ -44,7 +48,10 @@ function setOdetails() {
       .slice(1);
 }
 
-//----------------  Form Handling  ----------------//
+
+//-----------------------------------------------------//
+//                   Form Handling                     //
+//-----------------------------------------------------//
 
 // to check numeric input
 function isNumeric(value) {
@@ -64,7 +71,7 @@ function validateShipping() {
 
   var inputs = [fname, lname, email, mnum, adline, pincode, city];
   var eMessage = "";
-  var pins = ["251001"];
+  
 
   var error = [];
   const emailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -149,7 +156,6 @@ function validateBilling() {
 
     var inputs = [fname, lname, email, mnum, adline, pincode, city];
     var eMessage = "";
-    var pins = ["251001"];
 
     var error = [];
     const emailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -222,9 +228,9 @@ function conBilling() {
   document.getElementById("billingButton").click();
   
   setTimeout(function (){
-    var rect = document.getElementById("billingButton").getBoundingClientRect();
-    //window.scrollTo(rect.left,rect.top);
-  },300);
+    var rect = document.getElementById("checkoutbutton").getBoundingClientRect();
+    window.scrollTo(rect.left,rect.top);
+  },400);
   
 }
 
@@ -239,10 +245,6 @@ function sameAddr() {
     hidden[0].classList.remove("display-none");
     hidden[1].classList.remove("display-none");
   }
-}
-
-function testbutton() {
-  console.log(orderNumber());
 }
 
 //to generate a ordernumber
@@ -297,7 +299,6 @@ function passData(odNum) {
   //open in same tab
 }
 
-
 //to submit order form with values taken from shipping and billing forms
 function order() {
   var orderNum = document.getElementById("OrderNum");
@@ -325,8 +326,8 @@ function order() {
   var BState = document.getElementById("BState");
 
   orderNum.value = orderNumber();
-  model.value = "MSTB M01 VRT03";
-  Quantity.value = "2";
+  model.value = modelNo;
+  Quantity.value = quantity;
   SFName.value = document.getElementsByName("fname")[0].value;
   SLName.value = document.getElementsByName("lname")[0].value;
   SEmail.value = document.getElementsByName("email")[0].value;
@@ -396,4 +397,10 @@ function order() {
   // console.log(BPincode.value);
   // console.log(BCity.value);
   // console.log(BState.value);
+}
+
+
+
+function testbutton() {
+  console.log(orderNumber());
 }
