@@ -136,7 +136,6 @@ function parseData() {
 
 //to set Order Details
 function setOdetails() {
-  console.log(document.getElementById("modelName"));
   document.title=document.getElementById("modelName").innerText;
 }
 
