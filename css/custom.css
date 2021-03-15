@@ -363,21 +363,15 @@ max-width: 1200px !important;
 
 
 /*------------------------------------------------------*/
-/*                       FOOTER                         */
+/*                        Faq                           */
 /*------------------------------------------------------*/
 
-.footer-area p{
-  color: rgba(245, 245, 245, 0.7);
+.faq-area .card-body{
+  color:#222;
+  font-weight: 400;
 }
-.footer-social i{
-  font-size: 25px;
-}
-.form-control{
-  float:left;
-  width:65% !important;
-  color: #fff !important;
-  font-weight: 400 !important;
-}
-.submitbutton{
-  float:left;
+
+.faq-area p{
+  color: #222;
+  font-weight: 400;
 }

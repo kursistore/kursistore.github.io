@@ -218,7 +218,7 @@
 .left-section{
   border: none;
   margin-top: 10px;
-  border-bottom: 2px solid rgba(250, 124, 124, 0.835);
+  border-bottom: 1.5px solid rgba(250, 124, 124, 0.85);
   width: fit-content;
   height: fit-content;
   float:left;

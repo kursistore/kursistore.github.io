@@ -204,12 +204,13 @@ $(document).ready(function () {
 function passData(CardNo) {
   var models = document.getElementsByClassName("model-tag");
   var prices = document.getElementsByClassName("price-tag");
-  console.log(models[CardNo - 1].innerText);
-  console.log(prices[CardNo - 1].innerText.slice(2,));
-  console.log(CardNo);
+
+  // console.log(models[CardNo - 1].innerText);
+  // console.log(prices[CardNo - 1].innerText.slice(2,));
+  // console.log(CardNo);
 
   window.open(
-    "./product.html?f=ttyshHUIhsksn23iddbdcUUIok838hschb2osmnfy39SHiJBkjOOk8923982" +
+    "./product.html?f=ttyshHUIhsksn23iddbdcUjh34h3HDH8h9KmdmdUIok838hschb2osmnfy39SHiJBkjOOk8923982" +
       "&m=" +
       models[CardNo - 1].innerText +
       "&p=" +
