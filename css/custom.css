@@ -375,3 +375,8 @@ max-width: 1200px !important;
   color: #222;
   font-weight: 400;
 }
+
+.faq-area .btn-link{
+  width:100%;
+  text-align: left;
+}

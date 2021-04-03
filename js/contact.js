@@ -29,3 +29,18 @@ if (window.screen.width > 800) {
 } else {
   document.getElementById("footer-note").innerText = "Contact Us";
 }
+
+
+// to disable right click on all pages that has contact.js included
+// document.addEventListener("contextmenu", function(e){
+//   e.preventDefault();
+// }, false);
+
+// to disable right click on all images
+$("img").on("contextmenu",function(e){
+  return false;
+});
+
+$("video").on("contextmenu",function(e){
+  return false;
+});

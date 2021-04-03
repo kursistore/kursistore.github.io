@@ -74,15 +74,15 @@
 }
 
 .product-left{
-  width:50%;
+  width:40%;
   margin-top: -1450px;
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 30px;
+  top: 80px;
 }
 
 .product-right{
-  width:50%;
+  width:60%;
   float: left;
   padding: 0 4% ;
 }
@@ -94,6 +94,7 @@
     position: relative;
     float: none;
     margin-top: 0px;
+    top: 55px;
   }
   
   .product-right{
@@ -105,7 +106,7 @@
 }
 .main-image{
   width:auto;
-  height: 550px;
+  height: 500px;
   border-radius: 15px;
   display: block;
   margin-left: auto;
@@ -143,17 +144,18 @@
   margin: 5px;
   border-radius: 15%;
   transition: all .2s;
-  opacity: 0.6;
+  opacity: 0.9;
+  box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, 0.3);
 }
 .thumbnail:hover {
-  box-shadow: 0px 3px 8px 2px rgba(66, 25, 25, 0.4);
+  box-shadow: 0px 3px 8px 2px rgba(0, 0, 0, 0.5);
   transform:scale(1.2);
   opacity: 1;
   cursor: pointer;
 }
 
 .thumbnail-bar .active {
-  box-shadow: 0px 3px 8px 2px rgba(66, 25, 25, 0.3);
+  box-shadow: 0px 3px 8px 2px #25002498;
   transform:scale(1.1);
   opacity: 1;
 }
@@ -305,6 +307,9 @@
   }
 }
 
+.quantityinput label{
+  margin-bottom: 0px;
+}
 .quantityinput:hover{
   box-shadow: 0px 5px 8px 2px rgba(66, 25, 25, 0.3);
   transition: all 0.3s;
@@ -313,11 +318,9 @@
 .quantityinput h5{
   padding-right: 2px;
   color: #222;
-  font-size: medium;
+  font-size: 17px;
   font-weight: 600;
-  margin-top: 1px;
   cursor: pointer;
-  margin-top: 4px;
 }
 
 .quantityinput input{
@@ -328,7 +331,7 @@
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 5px;
+  margin-top:3px;
 }
 
 .quantityinput input:focus{
