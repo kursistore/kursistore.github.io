@@ -2640,7 +2640,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 @media (max-width: 414px) {
   .faq-left .card-header .btn-link {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
