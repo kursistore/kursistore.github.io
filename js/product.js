@@ -158,17 +158,17 @@ function parseData() {
 var aero =  ["Aero","MSTBM01VRT01","NEW","Foldable Study Table"
             ,"Aero is designed to be affordable and aesthetic at the same time. A must have product."
             ,"Very space effiecient, can turn any place into spotlight of the room. Sturdy enoungh to sync with your daily needs."
-            ,"Matte","Study & Home Office","64 cm","60 cm","160 cm","31 kg","White","Frosty White"];
+            ,"Matte","Study & Home Office","120 cm","60 cm","160 cm","32 kg","White","Frosty White"];
 
 var evolve =  ["Evolve","MSTBM01VRT02","NEW","Foldable Study Table"
               ,"The all new WorkStation is perfect for your Study or Home Office."
               ,"Kursi Store Products are carefully designed and tested towards the customer satisfaction end goal."
-              ,"Matte","Study & Home Office","64 cm","60 cm","160 cm","31 kg","White","Frosty White"];
+              ,"Matte","Study & Home Office","123 cm","60 cm","186 cm","48 kg","White","Frosty White"];
 
 var workStation = ["WorkStation","MSTBM01VRT03","NEW","Foldable Study Table"
                   ,"The all new WorkStation is perfect for your Study or Home Office."
                   ,"Kursi Store Products are carefully designed and tested towards the customer satisfaction end goal."
-                  ,"Matte","Study & Home Office","64 cm","60 cm","160 cm","31 kg","White","Frosty White"];
+                  ,"Matte","Study & Home Office","120 cm","97 cm","185 cm","64 kg","White","Frosty White"];
 
 var dineFold =  ["Dine Fold","MDTBM01VRT01","NEW","Foldable Dining Table"
               ,"The all new WorkStation is perfect for your Study or Home Office."
