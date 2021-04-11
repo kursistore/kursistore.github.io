@@ -321,7 +321,9 @@ max-width: 1200px !important;
   font-size: 13px;
   color: rgb(44, 44, 44);
 }
-
+.video-card{
+  padding: 20px 25px;padding-bottom: 20px;
+}
 /*------------------------------------------------------*/
 /*                      FEATURE                         */
 /*------------------------------------------------------*/

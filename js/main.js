@@ -218,3 +218,12 @@ function passData(CardNo) {
     "_self"
   );
 }
+var videos=document.getElementsByClassName("video-card");
+function playvideo(n){
+  videos[n-1].play();
+}
+
+function pausevideo(n){
+  var videos=document.getElementsByClassName("video-card");
+  videos[n-1].pause();
+}
