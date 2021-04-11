@@ -14,61 +14,6 @@ var pins = ["110001","110002","110003","110004","110005","110006","110007","1100
             "245205","245206","245207","245208","245301","245304","250001","250002","250003","250004","250005","250103","250104","250106","250110","250205",
             "250221","250222","250223","250341","250342","250344","250401","250402","250404","250406","250501","250502"];
 
-// Product Slides ---------------------------------------------------------
-
-var activeSlide = 0;
-var slideIndex = 0;
-showSlide(slideIndex);
-
-// Next/previous controls
-// function plusSlides(n) {
-//   showSlides((slideIndex += n));
-// }
-
-// Thumbnail image controls
-function currentSlide(n) {
-  hideSlide(activeSlide);
-  showSlide((slideIndex = n));
-}
-
-// function showSlides(n) {
-//   var i;
-//   var slides = document.getElementsByClassName("main-image");
-//   var dots = document.getElementsByClassName("thumbnail");
-//   //var captionText = document.getElementById("caption");
-//   if (n > slides.length) {
-//     slideIndex = 1;
-//   }
-//   if (n < 1) {
-//     slideIndex = slides.length;
-//   }
-//   for (i = 0; i < slides.length; i++) {
-//     slides[i].style.display = "none";
-//   }
-//   for (i = 0; i < dots.length; i++) {
-//     dots[i].className = dots[i].toggleClass("active");
-//   }
-//   slides[slideIndex - 1].style.display = "block";
-//   //dots[slideIndex-1].className += " active";
-//   //captionText.innerHTML = dots[slideIndex-1].alt;
-// }
-
-function showSlide(n) {
-  var slides = document.getElementsByClassName("main-image");
-  var dots = document.getElementsByClassName("thumbnail");
-  //console.log(slides.length)
-  slides[n].style.display = "block";
-  dots[n].classList.add("active");
-  activeSlide = n;
-}
-
-function hideSlide(n) {
-  var slides = document.getElementsByClassName("main-image");
-  var dots = document.getElementsByClassName("thumbnail");
-  //console.log(slides.length)
-  slides[n].style.display = "none";
-  dots[n].classList.remove("active");
-}
 
 var form = document.getElementById("pincodeForm");
 function handleForm(event) {
@@ -128,8 +73,6 @@ function passData() {
 var modelName = "";
 var modelPrice = "";
 
-
-
 //to parse the data from product page
 function parseData() {
   var url = document.location.href,
@@ -177,7 +120,13 @@ var dineFold =  ["Dine Fold","MDTBM01VRT01","NEW","Foldable Dining Table"
 
 
 var details=[aero,evolve,workStation,dineFold];
+
+var mainimages=document.getElementsByClassName("main-image");
+var thumbnails=document.getElementsByClassName("thumbnail");
+var video = mainimages[2];
+
 parseData();
+
 
 //to set Order Details
 function setOdetails() {
@@ -186,19 +135,19 @@ function setOdetails() {
 
   var mainimages=document.getElementsByClassName("main-image");
   var thumbnails=document.getElementsByClassName("thumbnail");
-  console.log();
 
-  var video = mainimages[0];
   var source = document.createElement('source');
 
   for(i=0;i<details.length;i++){
     if(details[i][0]==modelName){
-      mainimages[0].poster="img/products/"+details[i][1]+"/poster.jpg";
-      source.setAttribute('src', 'img/products/'+details[i][1]+'/fold.mp4');
-      video.appendChild(source);    
-
+        
+      mainimages[0].src="img/products/"+details[i][1]+"/1.jpg";
       mainimages[1].src="img/products/"+details[i][1]+"/2.jpg";
-      mainimages[2].src="img/products/"+details[i][1]+"/3.jpg";
+
+      mainimages[2].poster="img/products/"+details[i][1]+"/poster.jpg";
+      source.setAttribute('src', 'img/products/'+details[i][1]+'/fold.mp4');
+      video.appendChild(source);
+      video.play();
       mainimages[3].src="img/products/"+details[i][1]+"/4.jpg";
       mainimages[4].src="img/products/"+details[i][1]+"/5.jpg";
       mainimages[5].src="img/products/"+details[i][1]+"/6.jpg";
@@ -228,6 +177,8 @@ function setOdetails() {
       thumbnails[5].src="img/products/"+details[i][1]+"/Thumbnails/6.jpg";
       thumbnails[6].src="img/products/"+details[i][1]+"/Thumbnails/7.jpg";
       thumbnails[7].src="img/products/"+details[i][1]+"/Thumbnails/8.jpg";
+
+      video.pause();
     }
   }
 }
@@ -236,4 +187,66 @@ function setOdetails() {
 function scrolltoFooter(){
   //document.getElementById("request-container").scrollIntoView();
   document.getElementsByName("EMAIL")[0].focus();
+}
+
+// Product Slides ---------------------------------------------------------
+
+var activeSlide = 0;
+var slideIndex = 0;
+showSlide(slideIndex);
+
+// Next/previous controls
+// function plusSlides(n) {
+//   showSlides((slideIndex += n));
+// }
+
+// Thumbnail image controls
+function currentSlide(n) {
+  hideSlide(activeSlide);
+  showSlide((slideIndex = n));
+}
+
+// function showSlides(n) {
+//   var i;
+//   var slides = document.getElementsByClassName("main-image");
+//   var dots = document.getElementsByClassName("thumbnail");
+//   //var captionText = document.getElementById("caption");
+//   if (n > slides.length) {
+//     slideIndex = 1;
+//   }
+//   if (n < 1) {
+//     slideIndex = slides.length;
+//   }
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].toggleClass("active");
+//   }
+//   slides[slideIndex - 1].style.display = "block";
+//   //dots[slideIndex-1].className += " active";
+//   //captionText.innerHTML = dots[slideIndex-1].alt;
+// }
+
+function showSlide(n) {
+  var slides = document.getElementsByClassName("main-image");
+  var dots = document.getElementsByClassName("thumbnail");
+  //console.log(slides.length)
+  slides[n].style.display = "block";
+  dots[n].classList.add("active");
+  activeSlide = n;
+  if(n==2){
+    video.play();
+  }
+}
+
+function hideSlide(n) {
+  var slides = document.getElementsByClassName("main-image");
+  var dots = document.getElementsByClassName("thumbnail");
+  //console.log(slides.length)
+  slides[n].style.display = "none";
+  dots[n].classList.remove("active");
+  if(n==2){
+    video.pause();
+  }
 }

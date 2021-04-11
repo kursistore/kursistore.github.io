@@ -313,6 +313,15 @@ max-width: 1200px !important;
  font-family:monospace
 }
 
+#shop .model-type{
+  margin-top: 5px;
+}
+#shop h5{
+  font-weight: 500;
+  font-size: 13px;
+  color: rgb(44, 44, 44);
+}
+
 /*------------------------------------------------------*/
 /*                      FEATURE                         */
 /*------------------------------------------------------*/

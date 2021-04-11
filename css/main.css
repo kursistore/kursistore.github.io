@@ -2552,14 +2552,15 @@ body.mobile-nav-active #mobile-nav-toggle {
   transform:scale(1.03);
 }
 .single-unique-product img {
-  padding: 40px 0px;
+  padding-top:25px;
+  padding-bottom: 15px;
   height: 300px;
   width: auto;
 }
 
 .single-unique-product h6 {
   color: #d7003f;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
