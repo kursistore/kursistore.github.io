@@ -316,6 +316,9 @@ max-width: 1200px !important;
 }
 /* End of Removal */
 
+#shop .single-unique-product:hover{
+  cursor: pointer;
+}
 
 #shop .title p{
   color:rgb(200, 200, 200) !important;
