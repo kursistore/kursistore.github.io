@@ -214,7 +214,8 @@ function passData(CardNo) {
       "&m=" +
       models[CardNo - 1].innerText +
       "&p=" +
-      prices[CardNo - 1].innerText.slice(2,),
+      prices[CardNo - 1].innerText.slice(2,) +
+      "&g=lijdsclnasdicwnde982379uwhdfiy2346tr8ybdsoiy697DYGIB86T8GUSYB8D7T8bdii8S92",
     "_self"
   );
 }

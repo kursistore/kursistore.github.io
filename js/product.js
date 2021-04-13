@@ -57,7 +57,8 @@ function passData() {
       + "&n=" + modelName
       + "&m=" + encodeURIComponent(document.getElementById("modelNo").innerText)
       + "&p=" + document.getElementById("price").innerText
-      + "&q=" + document.getElementById("quantity").value,
+      + "&q=" + document.getElementById("quantity").value +
+      "&g=lijdsclnasdicwnde982379uwhdfiy2346tr8ybdsoiy697DYGIB86T8GUSYB8D7T8bdii8S92",
       "_self"
     );
   } else {
@@ -104,13 +105,13 @@ var aero =  ["Aero","MSTBM01VRT01","NEW","Foldable Study Table"
             ,"Matte","Study & Home Office","120 cm","60 cm","160 cm","32 kg","White","Frosty White"];
 
 var evolve =  ["Evolve","MSTBM01VRT02","NEW","Foldable Study Table"
-              ,"The all new WorkStation is perfect for your Study or Home Office."
-              ,"Kursi Store Products are carefully designed and tested towards the customer satisfaction end goal."
+              ,"Evolve is designed to actually evolve your expectations from regular furniture."
+              ,"A cupboard and study table combined with two decks of ample storage to meet your needs. Evolve your space with Evolve 2 in 1."
               ,"Matte","Study & Home Office","123 cm","60 cm","186 cm","48 kg","White","Frosty White"];
 
 var workStation = ["WorkStation","MSTBM01VRT03","NEW","Foldable Study Table"
-                  ,"The all new WorkStation is perfect for your Study or Home Office."
-                  ,"Kursi Store Products are carefully designed and tested towards the customer satisfaction end goal."
+                  ,"The all new WorkStation is for elites with classy aesthetics and best in class utility."
+                  ,"Not just another working desk its got all that you wish for in a modern Desk combined with personal Shelf. Easily converts into Cupboard within seconds."
                   ,"Matte","Study & Home Office","120 cm","97 cm","185 cm","64 kg","White","Frosty White"];
 
 var dineFold =  ["Dine Fold","MDTBM01VRT01","NEW","Foldable Dining Table"
