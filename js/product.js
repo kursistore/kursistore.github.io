@@ -96,28 +96,28 @@ function parseData() {
 
 // Model Name   = [<ModelName>, <Model No>, <Tag1>, <Short Description>, <Description Line1>, 
 //                 <Description Line2>, <Finish Type>, <Suitable For>, <Length(cm)>,
-//                 <Breadth(cm)>, <Height(cm)>, <Weight(kg)>,<Primary Color>, 
-//                 <Finish Color>] 
+//                 <Breadth(cm)>, <Height(cm)>, <Folded Dimention Label>, <FD (cm)>,
+//                 <Weight(kg)>,<Primary Color>, <Finish Color>] 
 
 var aero =  ["Aero","MSTBM01VRT01","NEW","Foldable Study Table"
             ,"Aero is designed to be affordable and aesthetic at the same time. A must have product."
             ,"Very space effiecient, can turn any place into spotlight of the room. Sturdy enoungh to sync with your daily needs."
-            ,"Matte","Study & Home Office","120 cm","60 cm","160 cm","32 kg","White","Frosty White"];
+            ,"Matte","Study & Home Office","120 cm","60 cm","160 cm","Folded Length","30 cm","32 kg","White","Frosty White"];
 
 var evolve =  ["Evolve","MSTBM01VRT02","NEW","Foldable Study Table"
               ,"Evolve is designed to actually evolve your expectations from regular furniture."
               ,"A cupboard and study table combined with two decks of ample storage to meet your needs. Evolve your space with Evolve 2 in 1."
-              ,"Matte","Study & Home Office","123 cm","60 cm","186 cm","48 kg","White","Frosty White"];
+              ,"Matte","Study & Home Office","123 cm","60 cm","186 cm","Folded Length","33 cm","48 kg","White","Frosty White"];
 
 var workStation = ["WorkStation","MSTBM01VRT03","NEW","Foldable Study Table"
                   ,"The all new WorkStation is for elites with classy aesthetics and best in class utility."
                   ,"Not just another working desk its got all that you wish for in a modern Desk combined with personal Shelf. Easily converts into Cupboard within seconds."
-                  ,"Matte","Study & Home Office","120 cm","97 cm","185 cm","64 kg","White","Frosty White"];
+                  ,"Matte","Study & Home Office","120 cm","97 cm","185 cm","Folded Length","32 cm","64 kg","White","Frosty White"];
 
-var dineFold =  ["Dine Fold","MDTBM01VRT01","NEW","Foldable Dining Table"
-              ,"The all new WorkStation is perfect for your Study or Home Office."
-              ,"Kursi Store Products are carefully designed and tested towards the customer satisfaction end goal."
-              ,"Matte","Study & Home Office","64 cm","60 cm","160 cm","31 kg","White","Frosty White"];
+var dineFold =  ["DineFold","MDTBM01VRT01","NEW","Foldable Dining Table"
+              ,"DineFold is a compact solution for dining need of every household."
+              ,"Use it as a Side table or as a Dining table DineFold won't let you down. Fits in small space and comes with built in storage."
+              ,"Matte","Living & Dining Hall","83 cm","178 cm","73 cm","Folded Breadth","38 cm","48 kg","White","Frosty White"];
 
 
 var details=[aero,evolve,workStation,dineFold];
@@ -166,9 +166,11 @@ function setOdetails() {
       document.getElementById("length").innerText=details[i][8];
       document.getElementById("breadth").innerText=details[i][9];
       document.getElementById("height").innerText=details[i][10];
-      document.getElementById("weight").innerText=details[i][11];
-      document.getElementById("primaryColor").innerText=details[i][12];
-      document.getElementById("finishColor").innerText=details[i][13];
+      document.getElementById("folDimLab").innerText=details[i][11];
+      document.getElementById("folDim").innerText=details[i][12];
+      document.getElementById("weight").innerText=details[i][13];
+      document.getElementById("primaryColor").innerText=details[i][14];
+      document.getElementById("finishColor").innerText=details[i][15];
 
       thumbnails[0].src="img/products/"+details[i][1]+"/Thumbnails/1.jpg";
       thumbnails[1].src="img/products/"+details[i][1]+"/Thumbnails/2.jpg";

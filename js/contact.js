@@ -10,7 +10,13 @@ function validateForm() {
   // } else {
   //   submitContactForm();
   // }
-  submitContactForm();
+
+  if (email == "") {
+    document.getElementById("submitsucess").innerText =
+      "Please enter an Email or Phone Number.";
+  } else {
+    submitContactForm();
+  }
 }
 
 function submitContactForm() {
