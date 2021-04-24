@@ -261,6 +261,7 @@ function orderNumber() {
   var hour = currentDate.getHours();
   var minute = currentDate.getMinutes();
   var second = currentDate.getSeconds();
+  var milisecond = currentDate.getMilliseconds();
   if (month < 10) {
     month = "0" + month;
   }
@@ -276,6 +277,14 @@ function orderNumber() {
   if (second < 10) {
     second = "0" + second;
   }
+  if (milisecond < 100) {
+    if(milisecond < 10) {
+      milisecond = "00" + milisecond;  
+    }
+    else{
+      milisecond = "0" + milisecond;
+    }
+  }
   //var orderdate = date + "/" + month + "/" + (year + 2000);
 
   //var ordernumber = year + "" + month + "" + date + "" + hour + "" + minute + "" + second;
@@ -288,7 +297,7 @@ function orderNumber() {
 
   //window.open(url, '_blank');
 
-  return year + "" + month + "" + date + "" + hour + "" + minute + "" + second;
+  return year + "" + month + "" + date + "" + hour + "" + minute + "" + second + "" + milisecond;
 }
 
 //to pass data to confirm page
