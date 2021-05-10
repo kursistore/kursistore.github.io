@@ -300,6 +300,7 @@ function orderNumber() {
   return year + "" + month + "" + date + "" + hour + "" + minute + "" + second + "" + milisecond;
 }
 
+
 //to pass data to confirm page
 function passData(odNum) {
   window.open(
