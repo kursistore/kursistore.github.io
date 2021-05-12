@@ -27,5 +27,3 @@ b = navigator.deviceMemory+"\n"+
     navigator.userAgent;
 
 document.getElementById("useragent").innerText=b;
-
-
