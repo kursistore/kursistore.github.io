@@ -1,10 +1,9 @@
 
 
-
 function getIPData(){
   setTimeout(function () {
     console.log();
-  }, 2000);
+  }, 3000);
   
   url = "https://json.geoiplookup.io/?callback=?";
   var ud = "_" + +new Date(),
@@ -30,6 +29,7 @@ function systemLog(data) {
   var device = document.getElementById("LFdevice");
   var browser = document.getElementById("LFbrowser");
   var ramcores = document.getElementById("LFramcores");
+  var newuser = document.getElementById("LFnewuser");
 
   page.value = document.title;
   ip.value = data.ip;
@@ -41,7 +41,14 @@ function systemLog(data) {
   device.value = getDevice();
   browser.value = getBrowser();
   ramcores.value = navigator.deviceMemory + " GB, " + window.navigator.hardwareConcurrency + " Cores";
-
+  if(/nu/.test(document.cookie)){
+    newuser.value = "no";
+  }
+  else{
+    newuser.value = "yes";
+    document.cookie = "nu=0; expires=Thu, 18 Dec 2040 12:00:00 UTC";
+  }
+  
   // console.log(page.value);
   // console.log(ip.value);
   // console.log(isporg.value);
@@ -52,7 +59,8 @@ function systemLog(data) {
   // console.log(device.value);
   // console.log(browser.value);
   // console.log(ramcores.value);
-
+  // console.log(newuser.value);
+  
   document.getElementsByName("LogForm")[0].submit();
 }
 

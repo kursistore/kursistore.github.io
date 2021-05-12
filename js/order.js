@@ -39,6 +39,7 @@ function parseData() {
 
 //to set Order Details
 function setOdetails() {
+  document.title="Checkout - " + modelName;
   document.getElementById("ODimg").src =
     "./img/products/" + modelNo + "/order-img.png";
   document.getElementById("ODmodelName").innerHTML = modelName;

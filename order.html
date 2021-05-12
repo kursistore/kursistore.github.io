@@ -7,7 +7,7 @@
   <!-- Favicon-->
   <link rel="icon" href="./img/head/logo.png">
   <!-- Author Meta -->
-  <meta name="author" content="kursistore">
+  <meta name="Anant Singh" content="kursistore">
   <!-- Meta Description -->
   <meta name="description" content="">
   <!-- Meta Keyword -->
@@ -18,12 +18,15 @@
   <title>Checkout</title>
 
 
- <!-- Google Tag Manager -->
- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-KHQFNCS');</script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KHQFNCS');</script>
   <!-- End Google Tag Manager -->
 
 
@@ -38,6 +41,7 @@
   <link rel="stylesheet" href="css/nice-select.css">
   <link rel="stylesheet" href="css/animate.min.css">
   <link rel="stylesheet" href="css/owl.carousel.css">
+
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/order.css">
   <link rel="stylesheet" href="css/header.css">
@@ -47,36 +51,13 @@
 <body>
 
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHQFNCS"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KHQFNCS" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
 
   <!-- Start header Area -->
-  <header id="p-header" class="header-scrolled">
-    <div class="container">
-      <div class="row align-items-center justify-content-between d-flex">
-        <div id="logo" class="logo">
-          <a href="index.html"><img src="img/header/logo.png" alt="" title="" /></a>
-        </div>
-        <nav id="p-nav-menu-container">
-          <ul class="p-nav-menu">
-            <li class="p-menu-active"><a href="index.html#home">Home</a></li>
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#shop">Products</a></li>
-            <li><a href="index.html#review">Reviews</a></li>
-            <li><a href="index.html#faq">FAQ</a></li>
-            <!--<li class="menu-has-children"><a href="">Pages</a>
-									<ul>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
-									</ul>
-								</li>-->
-          </ul>
-        </nav><!-- #nav-menu-container -->
-      </div>
-    </div>
-  </header>
+  <header></header>
   <!-- End header Area -->
 
 
@@ -284,7 +265,7 @@
                     <button id="checkoutbutton" class="primary-btn" onclick="validateBilling()">
                       Checkout
                     </button>
-                    
+
                   </div>
                 </div>
               </div>
@@ -296,7 +277,7 @@
     <div class="form-container">
       <script type="text/javascript">var submitted = false;</script>
       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-        onload="if(submitted)  {window.location='index.html';}"></iframe>
+        onload="if(submitted)  {window.location='';}"></iframe>
       <form name="OrderForm"
         action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSc_YFogUR04SSxB3D0Wwg4E0Etv_hHgqqygYrVBYrNtEY-Tzg/formResponse"
         method="post" target="hidden_iframe" onsubmit="submitted=true;">
@@ -329,74 +310,21 @@
   </section>
   <!-- End Order Area -->
 
-  <div>
-    <script type="text/javascript">var submitted = false;</script>
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
-      onload="if(submitted)  {window.location='index.html';}"></iframe>
-    <form name="ContactForm"
-      action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfrU8h34qp0RSqErO5PoLztVTo-pPhO_cFi19Z9gq5tkg0b7w/formResponse"
-      method="post" target="hidden_iframe" onsubmit="submitted=true;">
-      <input id="CEmail" style="display:none;" type="text" name="entry.2134301114" value="">
-      <!-- <input type="submit" value="Submit" /> -->
-    </form>
-  </div>
 
-
-	<!-- start footer Area -->
-	<footer class="footer-area section-gap">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-5 col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>Currently Serving in</h6>
-						<p>
-							Delhi, New Delhi, Noida, Greater Noida, Ghaziabad, Meerut, Faridabad and Gurugram.
-						</p>
-
-					</div>
-				</div>
-				<div class="col-lg-5  col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6>Request Services in your Area</h6>
-						<p>Happy to serve you better</p>
-						<h5 id="submitsucess"></h5>
-						<div id="request-container">
-							<input class="form-control" name="EMAIL" placeholder="Enter your Email or Phone Number" type="email">
-							<button class="click-btn btn btn-default submitbutton" onclick="validateForm()"><i
-									class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-6 col-sm-6 social-widget">
-					<div class="single-footer-widget">
-						<h6 id="footer-note">Follow Us</h6>
-						<p>Let us be social</p>
-						<div class="footer-social d-flex align-items-center">
-							<a href="https://www.facebook.com/KursiStoreIndia" target="_blank"><i class="fa fa-facebook"></i></a>
-							<a href="https://www.instagram.com/kursistoreindia/" target="_blank"><i class="fa fa-instagram"></i></a>
-							<a href="https://api.whatsapp.com/send?phone=+917669542408" target="_blank"><i class="fa fa-whatsapp"></i></a>
-							<a id="footerPhone" href="tel:+918755837310"><i class="fa fa-phone"></i></a>
-							<a id="footerEmail" href="mailto:support@kursistore.com"><i class="fa fa-envelope"></i></a>
-						</div>
-						<br>
-						<p class="footer-text">
-							Copyright &copy;
-							<script>document.write(new Date().getFullYear());</script>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End footer Area -->
+  <!-- start footer Area -->
+  <footer></footer>
+  <!-- End footer Area -->
 
   <script src="js/vendor/jquery-2.2.4.min.js"></script>
-  <script src="js/superfish.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
   <script src="js/vendor/bootstrap.min.js"></script>
-
+  <script src="js/compiled/superfish.min.js"></script>
+  <script src="js/compiled/jquery.magnific-popup.min.js"></script>
   <script src="js/header.js"></script>
+  <script src="js/footer.js"></script>
+
   <script src="js/contact.js"></script>
+
+  <script src="js/systemlog.js"></script>
 
 </body>
 

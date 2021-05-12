@@ -1,4 +1,3 @@
-footerPhone;
 
 const emailformat = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -29,24 +28,4 @@ function submitContactForm() {
     "Thankyou, we will contact you shortly.";
 }
 
-if (window.screen.width > 800) {
-  document.getElementById("footerPhone").style.display = "none";
-  document.getElementById("footerEmail").style.display = "none";
-} else {
-  document.getElementById("footer-note").innerText = "Contact Us";
-}
 
-
-// to disable right click on all pages that has contact.js included
-// document.addEventListener("contextmenu", function(e){
-//   e.preventDefault();
-// }, false);
-
-// to disable right click on all images
-$("img").on("contextmenu",function(e){
-  return false;
-});
-
-$("video").on("contextmenu",function(e){
-  return false;
-});

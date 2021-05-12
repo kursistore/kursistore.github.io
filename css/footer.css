@@ -169,3 +169,9 @@
 .footer-text a, .footer-text i {
   color: #fe3308;
 }
+
+@media (min-width:800px){
+  #footerEmail, #footerPhone{
+    display: none;
+  }
+}
