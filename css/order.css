@@ -7,15 +7,10 @@
   margin-top: 100px;
 }
 
-.form-frame{
-  width:100%;
-  height:1500px;
-  font-family: 'Times New Roman', Times, serif im !important;
-}
-
 .order-area {
   background: url(../img/faq/faq-bg.jpg) center;
   background-size: cover;
+  padding-bottom: 1px;
 }
 
 .order-area .orderdetail-cards{
@@ -27,10 +22,6 @@
     width: 90% ;
     margin:0 auto;
   }
-}
-
-.order-area{
-  padding-bottom: 1px;
 }
 
 .order-area .order-section{
@@ -225,7 +216,6 @@
   float: right;
   background-color: rgb(75, 75, 75);
   color: #fff;
-  border: none;
   border: 1px solid rgb(75, 75, 75);
   border-radius: 30px;
   padding: 0px 20px;
@@ -239,7 +229,6 @@
 
 .ordercard-container button:hover {
   border: 1px solid transparent;
-  border-radius: 30px;
   background-color: #930046;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.383), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: #fff;

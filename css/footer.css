@@ -23,7 +23,8 @@
   background-color: rgb(44,0,43);
 }
 
-.footer-area h5, h6 {
+.footer-area h5,
+.footer-area h6 {
   color: #fff;
   margin-bottom: 25px;
   font-size: 18px;

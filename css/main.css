@@ -790,9 +790,13 @@ b, sup, sub, u, del {
 }
 
 h1 {
-  font-size: 44px;
+  font-size: 48px;
 }
-
+@media (max-width: 800px) {
+  h1{
+   font-size: 44px;
+  }
+}
 h2 {
   font-size: 30px;
 }
@@ -1895,8 +1899,11 @@ h1, h2, h3, h4, h5, h6 {
   #logo {
     margin-left: 20px;
   }
- 
+  #header.header-scrolled #logo{
+    margin-left: -5px;
+  }
 }
+
 @media (max-width:800px){
   #header {
     background: none;
@@ -1999,19 +2006,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Nav Meu Container */
 #nav-menu-container {
   margin-bottom: 38px;
-  margin-right: 60px;
   transition: all 0.5s;
 }
 #nav-menu-container.nav-menu-scrolled{
   margin: 0px;
   transition: all 0.5s;
-}
-
-
-@media (min-width: 800px) {
-  #nav-menu-container {
-    padding-right: 20px;
-  }
 }
 
 @media (max-width: 768px) {
