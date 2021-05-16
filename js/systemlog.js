@@ -49,17 +49,17 @@ function systemLog(data) {
     document.cookie = "nu=0; expires=Thu, 18 Dec 2040 12:00:00 UTC";
   }
   
-  console.log(page.value);
-  console.log(ip.value);
-  console.log(isporg.value);
-  console.log(loc.value);
-  console.log(lat.value);
-  console.log(lon.value);
-  console.log(os.value);
-  console.log(device.value);
-  console.log(browser.value);
-  console.log(ramcores.value);
-  console.log(newuser.value);
+  // console.log(page.value);
+  // console.log(ip.value);
+  // console.log(isporg.value);
+  // console.log(loc.value);
+  // console.log(lat.value);
+  // console.log(lon.value);
+  // console.log(os.value);
+  // console.log(device.value);
+  // console.log(browser.value);
+  // console.log(ramcores.value);
+  // console.log(newuser.value);
   
   document.getElementsByName("LogForm")[0].submit();
 }
