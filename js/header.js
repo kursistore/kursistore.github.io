@@ -1,5 +1,5 @@
 // Load Header
-fetch("./views/header.html")
+fetch("/views/header.html")
   .then((response) => {
     return response.text();
   })

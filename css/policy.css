@@ -1,0 +1,54 @@
+.policy-area{
+  text-align: left;
+  justify-content: left;
+  height: fit-content;
+  overflow: auto;
+  padding-bottom: 50px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+@media (max-width:800px){
+  .policy-area{
+    padding-top: 100px;
+  }
+}
+
+.policy-area .page-heading{
+  text-align: center;
+  font-size: 44px;
+  height: fit-content;
+  overflow:visible;
+}
+
+.policy-area .list-heading{
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.policy-area .section-list{
+  margin: 0 auto;
+  margin-top: 20px;
+  height: fit-content;
+  overflow: auto;
+}
+
+.policy-area .no-heading{
+  margin-top: 50px;
+}
+
+.policy-area .section-heading{
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222222;
+  text-transform:uppercase;
+}
+
+.policy-area .detail-para{
+  text-align: justify;
+  padding: 10px 0;
+  width: 99%;
+  float: right;
+  color: #222222cc;
+}

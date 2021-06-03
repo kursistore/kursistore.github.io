@@ -1,6 +1,6 @@
 //load footer
 var submitted = false;
-fetch("./views/footer.html")
+fetch("/views/footer.html")
   .then((response) => {
     return response.text();
   })
